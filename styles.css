@@ -94,8 +94,8 @@ img { max-width: 100%; display: block; }
 .hero { padding: 70px 0 80px; }
 .hero-grid {
   display: grid;
-  grid-template-columns: 1.05fr .95fr;
-  gap: 60px;
+  grid-template-columns: 1fr 1fr;
+  gap: 72px;
   align-items: start;
 }
 
@@ -126,7 +126,7 @@ img { max-width: 100%; display: block; }
 .lead-form {
   margin-top: 38px;
   display: flex; flex-direction: column; gap: 12px;
-  max-width: 420px;
+  max-width: 600px;
 }
 .lead-form input {
   background: transparent;
@@ -146,15 +146,15 @@ img { max-width: 100%; display: block; }
 .hero-media {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  gap: 18px;
+  gap: 20px;
 }
 .hero-card {
-  border-radius: 18px;
-  min-height: 230px;
+  border-radius: 24px;
+  min-height: 360px;
   background:
     linear-gradient(150deg, #ffffff 0%, #e9e9e6 100%);
 }
-.hero-card-3 { grid-column: 1 / -1; min-height: 240px; }
+.hero-card-3 { grid-column: 1 / -1; min-height: 340px; }
 
 /* ===== MARQUEE ===== */
 .marquee {
