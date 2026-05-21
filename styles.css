@@ -749,25 +749,27 @@ img { max-width: 100%; display: block; }
 /* ===== SCROLL ANIMATIONS ===== */
 [data-anim] {
   opacity: 0;
-  transform: translateX(40px);
-  transition: opacity .8s var(--ease), transform .8s var(--ease);
+  transform: translateX(46px);
+  filter: blur(6px);
+  transition: opacity .9s var(--ease), transform .9s var(--ease), filter .9s var(--ease);
   transition-delay: var(--d, 0ms);
 }
-[data-anim].in { opacity: 1; transform: translateX(0); }
+[data-anim].in { opacity: 1; transform: translateX(0); filter: blur(0); }
 
 /* word-by-word build-from-right for headings */
 .aw {
   display: inline-block;
   opacity: 0;
-  transform: translateX(.45em);
-  transition: opacity .55s var(--ease), transform .55s var(--ease);
+  transform: translateX(.7em);
+  filter: blur(7px);
+  transition: opacity .72s var(--ease), transform .72s var(--ease), filter .72s var(--ease);
   transition-delay: var(--wd, 0ms);
 }
-.line.in .aw { opacity: 1; transform: translateX(0); }
+.line.in .aw { opacity: 1; transform: translateX(0); filter: blur(0); }
 
 @media (prefers-reduced-motion: reduce) {
   [data-anim], .aw {
-    opacity: 1 !important; transform: none !important;
+    opacity: 1 !important; transform: none !important; filter: none !important;
   }
   .marquee-track, .m-sep { animation: none; }
   .hero-gradient .aurora { animation: none; }
