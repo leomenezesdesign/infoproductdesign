@@ -4,10 +4,37 @@
 
   const reduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
-  // Stagger lines inside the same heading
-  document.querySelectorAll('.hero-title, .display, .contact-copy .big-heading').forEach(function (group) {
-    group.querySelectorAll('.line').forEach(function (line, i) {
-      line.style.setProperty('--d', (i * 90) + 'ms');
+  // Split heading lines into words for a build-from-right effect
+  function wrapWords(node, counter) {
+    Array.prototype.slice.call(node.childNodes).forEach(function (child) {
+      if (child.nodeType === 3) {
+        const parts = child.textContent.split(/(\s+)/);
+        const frag = document.createDocumentFragment();
+        parts.forEach(function (part) {
+          if (part === '') return;
+          if (/^\s+$/.test(part)) {
+            frag.appendChild(document.createTextNode(part));
+          } else {
+            const w = document.createElement('span');
+            w.className = 'aw';
+            w.textContent = part;
+            w.style.setProperty('--wd', (counter.i * 52) + 'ms');
+            counter.i++;
+            frag.appendChild(w);
+          }
+        });
+        node.replaceChild(frag, child);
+      } else if (child.nodeType === 1) {
+        wrapWords(child, counter);
+      }
+    });
+  }
+
+  document.querySelectorAll('.hero-title, .display').forEach(function (heading) {
+    const counter = { i: 0 };
+    heading.querySelectorAll('.line').forEach(function (line) {
+      line.removeAttribute('data-anim');
+      wrapWords(line, counter);
     });
   });
 
@@ -21,7 +48,7 @@
     if (!parent) return;
     Array.prototype.forEach.call(parent.children, function (child, i) {
       if (child.hasAttribute('data-anim')) {
-        child.style.setProperty('--d', (i * 110) + 'ms');
+        child.style.setProperty('--d', (i * 90) + 'ms');
       }
     });
   });

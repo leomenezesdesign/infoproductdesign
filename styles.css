@@ -262,12 +262,7 @@ img { max-width: 100%; display: block; }
 .hero-title .line > span,
 .hero-title .line > strong { white-space: nowrap; }
 
-.line {
-  display: block;
-  overflow: hidden;
-  padding-bottom: .16em;
-  margin-bottom: -.16em;
-}
+.line { display: block; }
 .line > span, .line > strong { display: block; }
 
 .lead-form {
@@ -754,22 +749,24 @@ img { max-width: 100%; display: block; }
 /* ===== SCROLL ANIMATIONS ===== */
 [data-anim] {
   opacity: 0;
-  transform: translateY(28px);
+  transform: translateX(40px);
   transition: opacity .8s var(--ease), transform .8s var(--ease);
   transition-delay: var(--d, 0ms);
 }
-[data-anim].in { opacity: 1; transform: translateY(0); }
+[data-anim].in { opacity: 1; transform: translateX(0); }
 
-/* line-mask reveal for headings */
-.line > span, .line > strong {
-  transform: translateY(110%);
-  transition: transform .9s var(--ease);
-  transition-delay: var(--d, 0ms);
+/* word-by-word build-from-right for headings */
+.aw {
+  display: inline-block;
+  opacity: 0;
+  transform: translateX(.45em);
+  transition: opacity .55s var(--ease), transform .55s var(--ease);
+  transition-delay: var(--wd, 0ms);
 }
-.line.in > span, .line.in > strong { transform: translateY(0); }
+.line.in .aw { opacity: 1; transform: translateX(0); }
 
 @media (prefers-reduced-motion: reduce) {
-  [data-anim], .line > span, .line > strong {
+  [data-anim], .aw {
     opacity: 1 !important; transform: none !important;
   }
   .marquee-track, .m-sep { animation: none; }
