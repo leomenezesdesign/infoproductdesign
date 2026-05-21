@@ -99,16 +99,28 @@ img { max-width: 100%; display: block; }
 .btn-accent:hover .arrow::before { transform: translate(135%, -135%); }
 .btn-accent:hover .arrow::after  { transform: translate(0, 0); }
 
-/* ===== HEADER ===== */
+/* ===== HEADER — floating glass nav ===== */
 .site-header {
-  position: sticky; top: 0; z-index: 50;
-  background: rgba(13,13,13,.82);
-  backdrop-filter: blur(14px);
-  border-bottom: 1px solid var(--card-line);
+  position: fixed;
+  top: 18px; left: 0; right: 0;
+  z-index: 100;
+  display: flex;
+  justify-content: center;
+  pointer-events: none;
 }
 .header-inner {
+  pointer-events: auto;
+  width: min(1180px, calc(100% - 40px));
   display: flex; align-items: center; justify-content: space-between;
-  padding-top: 16px; padding-bottom: 16px;
+  padding: 9px 9px 9px 24px;
+  background: rgba(18,18,18,.55);
+  -webkit-backdrop-filter: blur(20px) saturate(170%);
+  backdrop-filter: blur(20px) saturate(170%);
+  border: 1px solid rgba(255,255,255,.1);
+  border-radius: 999px;
+  box-shadow:
+    0 12px 40px rgba(0,0,0,.45),
+    inset 0 1px 0 rgba(255,255,255,.06);
 }
 .logo { display: flex; align-items: center; gap: 10px; }
 .logo-mark { display: grid; place-items: center; color: var(--text); }
@@ -121,7 +133,7 @@ img { max-width: 100%; display: block; }
 .nav a:hover { color: var(--accent); }
 
 /* ===== HERO ===== */
-.hero { padding: 70px 0 80px; position: relative; }
+.hero { padding: 128px 0 80px; position: relative; }
 .hero .container { position: relative; z-index: 1; }
 
 /* animated green gradient — right side, behind hero images */
