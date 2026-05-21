@@ -256,7 +256,12 @@ img { max-width: 100%; display: block; }
 .hero-title .line > span,
 .hero-title .line > strong { white-space: nowrap; }
 
-.line { display: block; overflow: hidden; }
+.line {
+  display: block;
+  overflow: hidden;
+  padding-bottom: .16em;
+  margin-bottom: -.16em;
+}
 .line > span, .line > strong { display: block; }
 
 .lead-form {
