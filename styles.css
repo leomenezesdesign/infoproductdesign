@@ -216,12 +216,15 @@ img { max-width: 100%; display: block; }
 
 .hero-title {
   margin-top: 14px;
-  font-size: clamp(38px, 5.4vw, 66px);
-  line-height: 1.04;
+  font-size: clamp(30px, 3.4vw, 44px);
+  line-height: 1.08;
   font-weight: 400;
   letter-spacing: -.02em;
 }
 .hero-title strong { font-weight: 700; }
+/* keep each line on a single row on desktop — exactly 5 lines */
+.hero-title .line > span,
+.hero-title .line > strong { white-space: nowrap; }
 
 .line { display: block; overflow: hidden; }
 .line > span, .line > strong { display: block; }
@@ -613,6 +616,8 @@ img { max-width: 100%; display: block; }
   .section { padding: 70px 0; }
   .nav { display: none; }
   .hero-gradient { display: none; }
+  .hero-title .line > span,
+  .hero-title .line > strong { white-space: normal; }
   .contact-topline { flex-direction: column; gap: 16px; align-items: flex-start; }
 }
 @media (max-width: 560px) {
