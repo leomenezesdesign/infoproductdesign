@@ -23,14 +23,26 @@ body {
   font-family: 'Manrope', system-ui, sans-serif;
   font-weight: 400;
   background-color: var(--bg);
-  background-image:
-    linear-gradient(rgba(255,255,255,.028) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(255,255,255,.028) 1px, transparent 1px);
-  background-size: 88px 88px;
   color: var(--text);
   -webkit-font-smoothing: antialiased;
   overflow-x: hidden;
   line-height: 1.5;
+}
+
+/* faint line-grid pattern — masked so it fades to black and keeps
+   the reading area clear */
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  z-index: -1;
+  pointer-events: none;
+  background-image:
+    linear-gradient(rgba(255,255,255,.04) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255,255,255,.04) 1px, transparent 1px);
+  background-size: 92px 92px;
+  -webkit-mask-image: radial-gradient(ellipse 82% 72% at 50% 40%, transparent 28%, #000 100%);
+  mask-image: radial-gradient(ellipse 82% 72% at 50% 40%, transparent 28%, #000 100%);
 }
 
 .container { max-width: var(--maxw); margin: 0 auto; padding: 0 32px; }
