@@ -22,7 +22,11 @@ html { scroll-behavior: smooth; }
 body {
   font-family: 'Manrope', system-ui, sans-serif;
   font-weight: 400;
-  background: var(--bg);
+  background-color: var(--bg);
+  background-image:
+    linear-gradient(rgba(255,255,255,.028) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255,255,255,.028) 1px, transparent 1px);
+  background-size: 88px 88px;
   color: var(--text);
   -webkit-font-smoothing: antialiased;
   overflow-x: hidden;
@@ -482,7 +486,33 @@ img { max-width: 100%; display: block; }
 .process-card p { color: var(--muted); font-size: 14px; }
 
 /* ===== CONTACT ===== */
-.contact { padding-top: 70px; }
+.contact {
+  padding-top: 70px;
+  position: relative;
+  overflow: hidden;
+}
+.contact > .container { position: relative; z-index: 1; }
+
+/* decorative line/ring pattern */
+.bg-rings {
+  position: absolute;
+  inset: 0;
+  overflow: hidden;
+  pointer-events: none;
+  z-index: 0;
+}
+.bg-rings .ring {
+  position: absolute;
+  border: 1px solid rgba(255,255,255,.075);
+  border-radius: 50%;
+}
+.ring-1 { width: 760px; height: 760px; top: -170px;  left: -250px; }
+.ring-2 { width: 900px; height: 900px; bottom: -430px; left: -210px; }
+.ring-3 {
+  width: 440px; height: 440px;
+  top: 150px; left: 340px;
+  border-color: rgba(255,255,255,.045);
+}
 .contact-topline {
   display: flex; justify-content: space-between; align-items: center;
   padding-bottom: 60px;
