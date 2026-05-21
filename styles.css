@@ -647,52 +647,6 @@ img { max-width: 100%; display: block; }
     0 0 32px rgba(130,255,31,.07);
 }
 
-/* ===== MOVING LIGHTS BEHIND CARD SECTIONS ===== */
-.strategy, .why, .proof, .work, .process {
-  position: relative;
-  overflow: hidden;
-}
-.strategy > .container,
-.why > .container,
-.proof > .container,
-.work > .container,
-.process > .container { position: relative; z-index: 1; }
-
-.strategy::before, .strategy::after,
-.why::before, .why::after,
-.proof::before, .proof::after,
-.work::before, .work::after,
-.process::before, .process::after,
-.contact::before, .contact::after {
-  content: "";
-  position: absolute;
-  z-index: 0;
-  pointer-events: none;
-  width: 480px; height: 480px;
-  border-radius: 50%;
-  filter: blur(90px);
-}
-.strategy::before, .why::before, .proof::before,
-.work::before, .process::before, .contact::before {
-  background: radial-gradient(circle, rgba(130,255,31,.24), transparent 70%);
-  top: 6%; left: -100px;
-  animation: lightDrift1 17s ease-in-out infinite;
-}
-.strategy::after, .why::after, .proof::after,
-.work::after, .process::after, .contact::after {
-  background: radial-gradient(circle, rgba(74,158,10,.28), transparent 70%);
-  bottom: 4%; right: -80px;
-  animation: lightDrift2 22s ease-in-out infinite;
-}
-@keyframes lightDrift1 {
-  0%,100% { transform: translate(0,0) scale(1); }
-  50%     { transform: translate(280px,80px) scale(1.25); }
-}
-@keyframes lightDrift2 {
-  0%,100% { transform: translate(0,0) scale(1); }
-  50%     { transform: translate(-260px,-90px) scale(1.2); }
-}
-
 /* ===== FAQ ===== */
 .faq { background: var(--light); color: var(--ink); padding: 0 0 120px; }
 .faq-header { background: var(--bg); padding: 40px 0; }
@@ -772,9 +726,6 @@ img { max-width: 100%; display: block; }
   }
   .marquee-track, .m-sep { animation: none; }
   .hero-gradient .aurora { animation: none; }
-  .strategy::before, .strategy::after, .why::before, .why::after,
-  .proof::before, .proof::after, .work::before, .work::after,
-  .process::before, .process::after, .contact::before, .contact::after { animation: none; }
   html { scroll-behavior: auto; }
 }
 
