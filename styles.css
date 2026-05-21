@@ -233,14 +233,14 @@ img { max-width: 100%; display: block; }
 
 .hero-grid {
   display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 72px;
+  grid-template-columns: 1.15fr .85fr;
+  gap: 52px;
   align-items: start;
 }
 
 .badge {
-  display: inline-flex; align-items: center; gap: 9px;
-  font-size: 13px; color: var(--muted);
+  display: inline-flex; align-items: center; gap: 10px;
+  font-size: 12.5px; color: var(--muted-dark);
 }
 .dot {
   width: 8px; height: 8px; border-radius: 50%;
@@ -248,11 +248,11 @@ img { max-width: 100%; display: block; }
   box-shadow: 0 0 12px var(--accent);
   flex-shrink: 0;
 }
-.eyebrow { margin-top: 22px; font-size: 17px; color: var(--muted); }
+.eyebrow { margin-top: 42px; font-size: 16px; color: var(--muted); }
 
 .hero-title {
-  margin-top: 14px;
-  font-size: clamp(30px, 3.4vw, 44px);
+  margin-top: 12px;
+  font-size: clamp(32px, 3.9vw, 50px);
   line-height: 1.08;
   font-weight: 400;
   letter-spacing: -.02em;
@@ -271,7 +271,7 @@ img { max-width: 100%; display: block; }
 .line > span, .line > strong { display: block; }
 
 .lead-form {
-  margin-top: 38px;
+  margin-top: 30px;
   display: flex; flex-direction: column; gap: 12px;
   max-width: 600px;
 }
