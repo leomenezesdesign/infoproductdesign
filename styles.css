@@ -625,13 +625,13 @@ img { max-width: 100%; display: block; }
 .work-item,
 .process-card,
 .contact-form-wrap {
-  background: linear-gradient(165deg, rgba(130,255,31,.08) 0%, rgba(22,30,14,.5) 52%, rgba(13,17,9,.58) 100%);
+  background: linear-gradient(165deg, rgba(130,255,31,.04) 0%, rgba(20,26,14,.55) 50%, rgba(13,16,10,.62) 100%);
   -webkit-backdrop-filter: blur(13px);
   backdrop-filter: blur(13px);
-  border: 1px solid rgba(130,255,31,.2);
+  border: 1px solid rgba(130,255,31,.12);
   box-shadow:
-    inset 0 1px 0 rgba(255,255,255,.05),
-    inset 0 -28px 48px -28px rgba(130,255,31,.22),
+    inset 0 1px 0 rgba(255,255,255,.04),
+    inset 0 -30px 50px -30px rgba(130,255,31,.1),
     0 12px 36px rgba(0,0,0,.4);
 }
 .cover-card:hover,
@@ -639,12 +639,12 @@ img { max-width: 100%; display: block; }
 .testimonial-card:hover,
 .work-item:hover,
 .process-card:hover {
-  border-color: rgba(130,255,31,.42);
+  border-color: rgba(130,255,31,.26);
   box-shadow:
-    inset 0 1px 0 rgba(255,255,255,.07),
-    inset 0 -28px 48px -28px rgba(130,255,31,.34),
+    inset 0 1px 0 rgba(255,255,255,.05),
+    inset 0 -30px 50px -30px rgba(130,255,31,.18),
     0 16px 44px rgba(0,0,0,.45),
-    0 0 40px rgba(130,255,31,.12);
+    0 0 32px rgba(130,255,31,.07);
 }
 
 /* ===== MOVING LIGHTS BEHIND CARD SECTIONS ===== */
@@ -674,13 +674,13 @@ img { max-width: 100%; display: block; }
 }
 .strategy::before, .why::before, .proof::before,
 .work::before, .process::before, .contact::before {
-  background: radial-gradient(circle, rgba(130,255,31,.5), transparent 70%);
+  background: radial-gradient(circle, rgba(130,255,31,.24), transparent 70%);
   top: 6%; left: -100px;
   animation: lightDrift1 17s ease-in-out infinite;
 }
 .strategy::after, .why::after, .proof::after,
 .work::after, .process::after, .contact::after {
-  background: radial-gradient(circle, rgba(74,158,10,.55), transparent 70%);
+  background: radial-gradient(circle, rgba(74,158,10,.28), transparent 70%);
   bottom: 4%; right: -80px;
   animation: lightDrift2 22s ease-in-out infinite;
 }
