@@ -259,6 +259,14 @@ p, blockquote { text-wrap: pretty; }
   flex-shrink: 0;
 }
 .eyebrow { margin-top: 42px; font-size: 16px; color: var(--muted); }
+.eyebrow .hl,
+mark.hl {
+  color: var(--text);
+  font-weight: 600;
+  background: linear-gradient(transparent 55%, rgba(130,255,31,.38) 55%);
+  padding: 0 3px;
+  border-radius: 2px;
+}
 
 .hero-title {
   margin-top: 12px;
