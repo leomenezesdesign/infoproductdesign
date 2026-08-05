@@ -124,7 +124,12 @@
     }).join('');
   });
 
-  // Lead forms redirect to Calendly with prefilled name/email/phone
+  // Google Apps Script Web App URL — receives leads and appends to the sheet.
+  // Setup: Sheet → Extensions → Apps Script → paste the doPost function from
+  // README/notes, Deploy → Web app → Access: Anyone, then paste the URL below.
+  const LEAD_ENDPOINT = '';
+
+  // Lead forms: save to sheet (fire-and-forget) then redirect to Calendly
   document.querySelectorAll('.lead-form').forEach(function (form) {
     form.addEventListener('submit', function (e) {
       e.preventDefault();
@@ -135,6 +140,18 @@
       const phone = (inputs[2] && inputs[2].value.trim()) || '';
       const dial  = (ddi && ddi.value) || '';
       const fullPhone = phone ? (dial ? dial + ' ' + phone : phone) : '';
+
+      // Send to Google Sheet via Apps Script (uses sendBeacon so the request
+      // survives the redirect below and there's no CORS preflight)
+      if (LEAD_ENDPOINT) {
+        try {
+          const payload = JSON.stringify({
+            name: name, email: email, phone: fullPhone, source: location.pathname
+          });
+          navigator.sendBeacon(LEAD_ENDPOINT, payload);
+        } catch (err) { /* ignore */ }
+      }
+
       const params = new URLSearchParams();
       if (name)  params.set('name', name);
       if (email) params.set('email', email);
