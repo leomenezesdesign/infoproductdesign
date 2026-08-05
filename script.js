@@ -127,7 +127,7 @@
   // Google Apps Script Web App URL — receives leads and appends to the sheet.
   // Setup: Sheet → Extensions → Apps Script → paste the doPost function from
   // README/notes, Deploy → Web app → Access: Anyone, then paste the URL below.
-  const LEAD_ENDPOINT = '';
+  const LEAD_ENDPOINT = 'https://script.google.com/macros/s/AKfycbxcQBZnrJpMXLORSQCbdW2m5Wpm3_6O568kYNePTinMX-y_NEuZCZqsQ-akZ98617DE-Q/exec';
 
   // Lead forms: save to sheet (fire-and-forget) then redirect to Calendly
   document.querySelectorAll('.lead-form').forEach(function (form) {
