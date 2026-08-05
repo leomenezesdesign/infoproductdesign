@@ -284,8 +284,19 @@ mark.hl {
 .line { display: block; }
 .line > span, .line > strong { display: block; }
 
+.hero-sub {
+  margin-top: 24px;
+  font-size: 17px;
+  font-weight: 400;
+  color: var(--muted);
+  max-width: 560px;
+  line-height: 1.45;
+  letter-spacing: normal;
+}
+.hero-sub strong { color: var(--text); font-weight: 600; }
+
 .lead-form {
-  margin-top: 30px;
+  margin-top: 28px;
   display: flex; flex-direction: column; gap: 12px;
   max-width: 600px;
 }
