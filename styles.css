@@ -1176,6 +1176,8 @@ mark.hl {
   .section { padding: 70px 0; }
   .nav { display: none; }
   .hero-gradient { display: none; }
+  .hero { padding: 92px 0 60px; }
+  .eyebrow { margin-top: 18px; }
   .v-marquee { height: 440px; }
   .v-card { margin-bottom: 14px; }
   .v-marquee { gap: 14px; }
