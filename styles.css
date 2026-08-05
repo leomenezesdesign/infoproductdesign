@@ -314,6 +314,55 @@ mark.hl {
 .lead-form input:focus { outline: none; border-color: var(--accent); }
 .lead-form .btn { margin-top: 6px; align-self: flex-start; }
 
+/* phone field with DDI selector */
+.phone-field {
+  display: flex;
+  align-items: stretch;
+  border: 1px solid var(--card-line);
+  border-radius: 999px;
+  background: transparent;
+  overflow: hidden;
+  transition: border-color .2s;
+}
+.phone-field:focus-within { border-color: var(--accent); }
+.phone-field .ddi {
+  border: 0;
+  background: transparent;
+  color: var(--text);
+  font-family: inherit;
+  font-size: 15px;
+  padding: 16px 30px 16px 22px;
+  cursor: pointer;
+  outline: none;
+  -webkit-appearance: none;
+  appearance: none;
+  border-right: 1px solid var(--card-line);
+  background-image: url("data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20width='10'%20height='6'%20viewBox='0%200%2010%206'%20fill='none'%3E%3Cpath%20d='M1%201L5%205L9%201'%20stroke='%239a9a9a'%20stroke-width='1.5'%20stroke-linecap='round'%20stroke-linejoin='round'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right 12px center;
+  max-width: 130px;
+  text-overflow: ellipsis;
+}
+.phone-field .ddi option {
+  background: #141414;
+  color: var(--text);
+  font-family: inherit;
+}
+.phone-field input[type="tel"] {
+  flex: 1 1 auto;
+  min-width: 0;
+  border: 0;
+  border-radius: 0;
+  background: transparent;
+  padding: 16px 22px;
+  font-size: 16px;
+  color: var(--text);
+  font-family: inherit;
+  outline: none;
+}
+.phone-field input[type="tel"]:focus { border: 0; }
+.lead-form.dark .phone-field { background: rgba(255,255,255,.04); }
+
 /* hero media — dual vertical project marquee */
 .hero-media { min-width: 0; }
 .v-marquee {

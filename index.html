@@ -51,7 +51,10 @@
       <form class="lead-form" data-anim style="--d:720ms">
         <input type="text" placeholder="First Name" aria-label="First Name" />
         <input type="email" placeholder="Email" aria-label="Email" />
-        <input type="tel" placeholder="Phone Number" aria-label="Phone Number" />
+        <div class="phone-field">
+          <select class="ddi" aria-label="Country code"></select>
+          <input type="tel" placeholder="Phone Number" aria-label="Phone Number" />
+        </div>
         <button type="submit" class="btn btn-accent">
           Book Your Free Strategy Call
           <span class="arrow" aria-hidden="true"></span>
@@ -765,7 +768,10 @@
         <form class="lead-form dark">
           <input type="text" placeholder="First Name" aria-label="First Name" />
           <input type="email" placeholder="Email" aria-label="Email" />
-          <input type="tel" placeholder="Phone Number" aria-label="Phone Number" />
+          <div class="phone-field">
+            <select class="ddi" aria-label="Country code"></select>
+            <input type="tel" placeholder="Phone Number" aria-label="Phone Number" />
+          </div>
           <button type="submit" class="btn btn-accent">
             Book Your Free Strategy Call
             <span class="arrow" aria-hidden="true"></span>

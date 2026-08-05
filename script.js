@@ -72,18 +72,73 @@
     });
   }
 
+  // Populate country-code (DDI) selects
+  const COUNTRIES = [
+    ['+55','🇧🇷','Brazil'],
+    ['+1','🇺🇸','United States'],
+    ['+1','🇨🇦','Canada'],
+    ['+351','🇵🇹','Portugal'],
+    ['+44','🇬🇧','United Kingdom'],
+    ['+34','🇪🇸','Spain'],
+    ['+52','🇲🇽','Mexico'],
+    ['+54','🇦🇷','Argentina'],
+    ['+56','🇨🇱','Chile'],
+    ['+57','🇨🇴','Colombia'],
+    ['+51','🇵🇪','Peru'],
+    ['+598','🇺🇾','Uruguay'],
+    ['+595','🇵🇾','Paraguay'],
+    ['+58','🇻🇪','Venezuela'],
+    ['+593','🇪🇨','Ecuador'],
+    ['+591','🇧🇴','Bolivia'],
+    ['+49','🇩🇪','Germany'],
+    ['+33','🇫🇷','France'],
+    ['+39','🇮🇹','Italy'],
+    ['+31','🇳🇱','Netherlands'],
+    ['+41','🇨🇭','Switzerland'],
+    ['+43','🇦🇹','Austria'],
+    ['+32','🇧🇪','Belgium'],
+    ['+46','🇸🇪','Sweden'],
+    ['+47','🇳🇴','Norway'],
+    ['+45','🇩🇰','Denmark'],
+    ['+353','🇮🇪','Ireland'],
+    ['+972','🇮🇱','Israel'],
+    ['+61','🇦🇺','Australia'],
+    ['+64','🇳🇿','New Zealand'],
+    ['+81','🇯🇵','Japan'],
+    ['+82','🇰🇷','South Korea'],
+    ['+86','🇨🇳','China'],
+    ['+91','🇮🇳','India'],
+    ['+65','🇸🇬','Singapore'],
+    ['+852','🇭🇰','Hong Kong'],
+    ['+971','🇦🇪','United Arab Emirates'],
+    ['+966','🇸🇦','Saudi Arabia'],
+    ['+27','🇿🇦','South Africa'],
+    ['+90','🇹🇷','Turkey'],
+    ['+7','🇷🇺','Russia'],
+  ];
+  document.querySelectorAll('select.ddi').forEach(function (sel) {
+    sel.innerHTML = COUNTRIES.map(function (c, i) {
+      return '<option value="' + c[0] + '" data-flag="' + c[1] + '"'
+        + (i === 0 ? ' selected' : '') + '>'
+        + c[1] + ' ' + c[0] + ' — ' + c[2] + '</option>';
+    }).join('');
+  });
+
   // Lead forms redirect to Calendly with prefilled name/email/phone
   document.querySelectorAll('.lead-form').forEach(function (form) {
     form.addEventListener('submit', function (e) {
       e.preventDefault();
       const inputs = form.querySelectorAll('input');
+      const ddi = form.querySelector('select.ddi');
       const name  = (inputs[0] && inputs[0].value.trim()) || '';
       const email = (inputs[1] && inputs[1].value.trim()) || '';
       const phone = (inputs[2] && inputs[2].value.trim()) || '';
+      const dial  = (ddi && ddi.value) || '';
+      const fullPhone = phone ? (dial ? dial + ' ' + phone : phone) : '';
       const params = new URLSearchParams();
       if (name)  params.set('name', name);
       if (email) params.set('email', email);
-      if (phone) params.set('a1', phone);
+      if (fullPhone) params.set('a1', fullPhone);
       const base = 'https://calendly.com/infoproductsdesigns/30min';
       const qs = params.toString();
       window.location.href = qs ? base + '?' + qs : base;
