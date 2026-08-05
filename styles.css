@@ -1067,6 +1067,39 @@ mark.hl {
   html { scroll-behavior: auto; }
 }
 
+/* ===== THANK YOU PAGE ===== */
+.thanks {
+  min-height: 88vh;
+  display: grid;
+  place-items: center;
+  text-align: center;
+  padding: 160px 0 100px;
+  position: relative;
+}
+.thanks > .container { position: relative; z-index: 1; }
+.thanks-title {
+  font-size: clamp(64px, 10vw, 140px);
+  line-height: 1;
+  letter-spacing: -.03em;
+  max-width: 900px;
+  margin: 0 auto;
+}
+.thanks-title em { font-style: normal; color: var(--accent); font-weight: 600; }
+.thanks-body {
+  max-width: 640px;
+  margin: 26px auto 0;
+  font-size: 19px;
+  line-height: 1.5;
+  color: var(--muted);
+}
+.thanks-body.strong { color: var(--text); margin-top: 16px; }
+
+/* ===== SITE FOOTER ===== */
+.site-footer { background: var(--bg); padding: 40px 0; border-top: 1px solid rgba(255,255,255,.06); }
+.footer-inner {
+  display: flex; justify-content: space-between; align-items: flex-start;
+}
+
 /* ===== RESPONSIVE ===== */
 @media (max-width: 980px) {
   .hero-grid, .strategy-grid, .contact-grid { grid-template-columns: 1fr; gap: 44px; }
