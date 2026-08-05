@@ -72,6 +72,24 @@
     });
   }
 
+  // Lead forms redirect to Calendly with prefilled name/email/phone
+  document.querySelectorAll('.lead-form').forEach(function (form) {
+    form.addEventListener('submit', function (e) {
+      e.preventDefault();
+      const inputs = form.querySelectorAll('input');
+      const name  = (inputs[0] && inputs[0].value.trim()) || '';
+      const email = (inputs[1] && inputs[1].value.trim()) || '';
+      const phone = (inputs[2] && inputs[2].value.trim()) || '';
+      const params = new URLSearchParams();
+      if (name)  params.set('name', name);
+      if (email) params.set('email', email);
+      if (phone) params.set('a1', phone);
+      const base = 'https://calendly.com/infoproductsdesigns/30min';
+      const qs = params.toString();
+      window.location.href = qs ? base + '?' + qs : base;
+    });
+  });
+
   // FAQ accordion
   document.querySelectorAll('.acc-item').forEach(function (item) {
     const head = item.querySelector('.acc-head');
