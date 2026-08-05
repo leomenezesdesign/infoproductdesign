@@ -261,11 +261,11 @@ p, blockquote { text-wrap: pretty; }
 .eyebrow { margin-top: 42px; font-size: 16px; color: var(--muted); }
 .eyebrow .hl,
 mark.hl {
-  color: var(--text);
+  color: var(--ink);
   font-weight: 600;
-  background: linear-gradient(transparent 55%, rgba(130,255,31,.38) 55%);
-  padding: 0 3px;
-  border-radius: 2px;
+  background: var(--accent);
+  padding: 2px 6px;
+  border-radius: 4px;
 }
 
 .hero-title {
