@@ -72,10 +72,10 @@
     });
   }
 
-  // Populate country-code (DDI) selects
+  // Populate country-code (DDI) selects — United States first (default)
   const COUNTRIES = [
-    ['+55','🇧🇷','Brazil'],
     ['+1','🇺🇸','United States'],
+    ['+55','🇧🇷','Brazil'],
     ['+1','🇨🇦','Canada'],
     ['+351','🇵🇹','Portugal'],
     ['+44','🇬🇧','United Kingdom'],
@@ -122,6 +122,43 @@
         + (i === 0 ? ' selected' : '') + '>'
         + c[1] + ' ' + c[0] + ' — ' + c[2] + '</option>';
     }).join('');
+
+    const wrap = sel.closest('.ddi-wrap');
+    const flagEl = wrap && wrap.querySelector('.ddi-flag');
+    const field = sel.closest('.phone-field');
+    const phoneInput = field && field.querySelector('input[type="tel"]');
+    let currentDial = sel.value;
+
+    if (phoneInput && !phoneInput.value) {
+      phoneInput.value = currentDial + ' ';
+    }
+    if (flagEl) {
+      const opt = sel.options[sel.selectedIndex];
+      flagEl.textContent = opt.getAttribute('data-flag') || '';
+    }
+
+    sel.addEventListener('change', function () {
+      const newDial = sel.value;
+      const opt = sel.options[sel.selectedIndex];
+      if (flagEl) flagEl.textContent = opt.getAttribute('data-flag') || '';
+      if (phoneInput) {
+        const val = phoneInput.value;
+        const prev = currentDial + ' ';
+        if (val === '' || val.trim() === '') {
+          phoneInput.value = newDial + ' ';
+        } else if (val.startsWith(prev)) {
+          phoneInput.value = newDial + ' ' + val.slice(prev.length);
+        } else if (val.startsWith(currentDial)) {
+          phoneInput.value = newDial + val.slice(currentDial.length);
+        } else {
+          phoneInput.value = newDial + ' ' + val;
+        }
+        phoneInput.focus();
+        const len = phoneInput.value.length;
+        phoneInput.setSelectionRange(len, len);
+      }
+      currentDial = newDial;
+    });
   });
 
   // Google Apps Script Web App URL — receives leads and appends to the sheet.
@@ -134,12 +171,10 @@
     form.addEventListener('submit', function (e) {
       e.preventDefault();
       const inputs = form.querySelectorAll('input');
-      const ddi = form.querySelector('select.ddi');
       const name  = (inputs[0] && inputs[0].value.trim()) || '';
       const email = (inputs[1] && inputs[1].value.trim()) || '';
-      const phone = (inputs[2] && inputs[2].value.trim()) || '';
-      const dial  = (ddi && ddi.value) || '';
-      const fullPhone = phone ? (dial ? dial + ' ' + phone : phone) : '';
+      // Phone input already includes the dial code (e.g. "+1 555-1234")
+      const fullPhone = (inputs[2] && inputs[2].value.trim()) || '';
 
       // Send to Google Sheet via Apps Script (uses sendBeacon so the request
       // survives the redirect below and there's no CORS preflight)

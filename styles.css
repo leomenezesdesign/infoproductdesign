@@ -325,23 +325,39 @@ mark.hl {
   transition: border-color .2s;
 }
 .phone-field:focus-within { border-color: var(--accent); }
+.ddi-wrap {
+  position: relative;
+  display: flex;
+  align-items: center;
+  border-right: 1px solid var(--card-line);
+  min-width: 74px;
+}
+.ddi-flag {
+  position: absolute;
+  left: 18px;
+  top: 50%;
+  transform: translateY(-50%);
+  pointer-events: none;
+  font-size: 20px;
+  line-height: 1;
+  z-index: 1;
+}
 .phone-field .ddi {
+  width: 100%;
   border: 0;
   background: transparent;
-  color: var(--text);
+  color: transparent;
+  text-shadow: none;
   font-family: inherit;
   font-size: 15px;
-  padding: 16px 30px 16px 22px;
+  padding: 16px 26px 16px 46px;
   cursor: pointer;
   outline: none;
   -webkit-appearance: none;
   appearance: none;
-  border-right: 1px solid var(--card-line);
   background-image: url("data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20width='10'%20height='6'%20viewBox='0%200%2010%206'%20fill='none'%3E%3Cpath%20d='M1%201L5%205L9%201'%20stroke='%239a9a9a'%20stroke-width='1.5'%20stroke-linecap='round'%20stroke-linejoin='round'/%3E%3C/svg%3E");
   background-repeat: no-repeat;
-  background-position: right 12px center;
-  max-width: 130px;
-  text-overflow: ellipsis;
+  background-position: right 10px center;
 }
 .phone-field .ddi option {
   background: #141414;
