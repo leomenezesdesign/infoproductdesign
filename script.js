@@ -198,7 +198,10 @@
       if (fullPhone) params.set('a1', fullPhone);
       const base = 'https://calendly.com/infoproductsdesigns/30min';
       const qs = params.toString();
-      window.location.href = qs ? base + '?' + qs : base;
+      const dest = qs ? base + '?' + qs : base;
+
+      // Give the pixel ~300ms to fire before navigating away
+      setTimeout(function () { window.location.href = dest; }, 300);
     });
   });
 
