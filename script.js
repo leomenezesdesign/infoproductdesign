@@ -187,6 +187,11 @@
         } catch (err) { /* ignore */ }
       }
 
+      // Meta Pixel — Lead conversion event
+      if (typeof fbq === 'function') {
+        try { fbq('track', 'Lead'); } catch (err) { /* ignore */ }
+      }
+
       const params = new URLSearchParams();
       if (name)  params.set('name', name);
       if (email) params.set('email', email);
