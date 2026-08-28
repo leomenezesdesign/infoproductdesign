@@ -1,10 +1,10 @@
 <!DOCTYPE html>
-<html lang="pt-BR">
+<html lang="en">
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <title>Briefing — Copy | Infoproduct Design</title>
-<meta name="description" content="Briefing de copywriting da Infoproduct Design. Suas respostas guiam cada palavra escrita." />
+<meta name="description" content="Copywriting briefing for Infoproduct Design. Your answers guide every word we write." />
 <meta name="robots" content="noindex" />
 <link rel="preconnect" href="https://fonts.googleapis.com" />
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -93,7 +93,7 @@ strong,b{font-weight:600}
 }
 .btn-light:hover{transform:translateY(-2px);box-shadow:0 8px 24px rgba(255,255,255,.15)}
 
-/* 3D accent button (same as landing) */
+/* 3D accent button */
 .btn-accent{
   position:relative;
   display:inline-flex;align-items:center;
@@ -260,7 +260,6 @@ strong,b{font-weight:600}
 
 /* Questions */
 .questions{display:flex;flex-direction:column;gap:24px}
-.question{}
 .q-label-row{display:flex;align-items:center;gap:10px;justify-content:space-between;margin-bottom:8px;flex-wrap:wrap}
 .q-label{font-size:15px;font-weight:600;color:var(--text);line-height:1.4}
 .q-req{
@@ -295,7 +294,7 @@ textarea.field{min-height:104px;resize:vertical;line-height:1.55}
 }
 .err-msg.show{display:block}
 
-/* Radio / checkbox option cards */
+/* Radio option cards */
 .opts-grid{
   display:grid;grid-template-columns:1fr 1fr;gap:10px;
 }
@@ -332,17 +331,6 @@ textarea.field{min-height:104px;resize:vertical;line-height:1.55}
 }
 .opt-card.chosen .opt-radio{border-color:var(--accent)}
 .opt-card.chosen .opt-radio-dot{transform:scale(1)}
-.opt-box{
-  width:18px;height:18px;border-radius:5px;
-  border:1.5px solid var(--muted-dark);
-  display:grid;place-items:center;
-  flex-shrink:0;background:transparent;
-  transition:all .2s;
-}
-.opt-card.chosen .opt-box{background:var(--accent);border-color:var(--accent)}
-.opt-box svg{opacity:0;transition:opacity .2s}
-.opt-card.chosen .opt-box svg{opacity:1}
-.opt-box svg path{stroke:var(--ink) !important}
 .opt-label{font-size:14.5px;line-height:1.4}
 
 /* Chips */
@@ -498,30 +486,30 @@ textarea.field{min-height:104px;resize:vertical;line-height:1.55}
 <div id="cover" class="cover">
   <div class="cover-inner">
     <span class="cover-badge">Briefing</span>
-    <h1 class="cover-title">Copy &amp;<br/><em>Texto</em></h1>
-    <p class="cover-sub">Suas respostas guiarão cada palavra escrita. Quanto mais detalhes, mais assertiva será a comunicação.</p>
+    <h1 class="cover-title">Copy &amp;<br/><em>Content</em></h1>
+    <p class="cover-sub">Your answers will guide every word we write. The more detail you provide, the sharper the communication.</p>
 
     <div class="cover-body">
       <div class="cover-item">
         <div class="cover-icon">01</div>
-        <p class="cover-item-text">É importante que você responda as questões com atenção, pois serão a <strong>base de toda a copy</strong> que iremos desenvolver juntos.</p>
+        <p class="cover-item-text">Please answer with care — this will be the <strong>foundation of all the copy</strong> we develop together.</p>
       </div>
       <div class="cover-item">
         <div class="cover-icon">02</div>
-        <p class="cover-item-text">As respostas são <strong>confidenciais</strong> e não serão compartilhadas com terceiros.</p>
+        <p class="cover-item-text">Your answers are <strong>confidential</strong> and will not be shared with third parties.</p>
       </div>
       <div class="cover-item">
         <div class="cover-icon">03</div>
-        <p class="cover-item-text">O briefing é ideal para entendermos bem a oferta e o público e desenvolver uma <strong>copy forte, persuasiva e de grande valor</strong>.</p>
+        <p class="cover-item-text">This briefing helps us understand your offer and audience so we can craft <strong>strong, persuasive copy with real value</strong>.</p>
       </div>
     </div>
 
     <div class="cover-ft">
       <button class="btn-accent" onclick="startBriefing()" style="width:100%;justify-content:center">
-        Iniciar briefing
+        Start briefing
         <span class="arrow" aria-hidden="true"></span>
       </button>
-      <p class="cover-note"><strong>Não é necessário responder todas as perguntas.</strong> Mas quanto mais detalhes, melhor o resultado.</p>
+      <p class="cover-note"><strong>You don't have to answer every question.</strong> But the more detail you give, the better the result.</p>
     </div>
   </div>
 </div>
@@ -535,18 +523,18 @@ textarea.field{min-height:104px;resize:vertical;line-height:1.55}
 </main>
 
 <!-- THANK YOU -->
-<div id="ty" class="ty" role="dialog" aria-modal="true" aria-label="Briefing enviado">
+<div id="ty" class="ty" role="dialog" aria-modal="true" aria-label="Briefing submitted">
   <div class="ty-card">
     <div class="ty-check-wrap">
       <span class="ty-check">✓</span>
     </div>
-    <h1 class="ty-headline">Briefing<br/><em>recebido.</em></h1>
-    <p class="ty-sub">Em breve entramos em contato pelo e-mail informado. Obrigado por confiar no nosso trabalho!</p>
+    <h1 class="ty-headline">Briefing<br/><em>received.</em></h1>
+    <p class="ty-sub">We'll be in touch soon at the email you provided. Thanks for trusting our work!</p>
     <button class="ty-dl" onclick="downloadSummary()">
       <svg width="14" height="14" viewBox="0 0 14 14" fill="none" aria-hidden="true">
         <path d="M7 1v9M3.5 6.5L7 10.5 10.5 6.5M1 13h12" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
       </svg>
-      Baixar resumo
+      Download summary
     </button>
   </div>
 </div>
@@ -556,104 +544,104 @@ textarea.field{min-height:104px;resize:vertical;line-height:1.55}
    DATA
 ══════════════════════════════════ */
 const SECTIONS = [
-  { id:1, num:'01', title:'O Projeto',
-    desc:'Aqui você entende o jogo antes de escrever qualquer palavra.',
+  { id:1, num:'01', title:'The Project',
+    desc:'Understand the game before writing a single word.',
     questions:[
-      { id:'email',        label:'E-mail de contato', type:'email', required:true, ph:'seu@email.com' },
-      { id:'nome_projeto', label:'Nome do projeto ou produto', type:'text', required:true, ph:'Ex: Método Clareza, Curso Finanças Pro, Clínica Renovar...' },
-      { id:'objetivo', label:'Qual é o objetivo principal da copy?', type:'radio', required:true, cols:1,
-        opts:['Vender um produto ou serviço','Capturar leads (e-mail, WhatsApp)','Aquecer audiência / nutrir','Inscrição em evento ou webinar','Institucional / branding','Outro'] },
-      { id:'onde_usada', label:'Onde a copy será usada?', type:'chips', hint:'Selecione todas que se aplicam',
-        opts:['Landing page','E-mail marketing','Anúncio (Meta Ads)','Anúncio (Google Ads)','Post de feed','Stories / Reels','WhatsApp / Direct','Roteiro de vídeo (VSL)','Apresentação comercial','Outro'] },
-      { id:'pagina_existe', label:'Essa página já existe?', type:'radio', cols:3,
-        opts:['Sim — enviarei o link','Não — será criada do zero','Estou reformulando'] },
-      { id:'pagina_link', label:'Link da página atual (se existir)', type:'text', ph:'https://...' },
-      { id:'trafego', label:'Existe tráfego rodando? De onde vem?', type:'text', ph:'Ex: Instagram orgânico, Meta Ads, YouTube, WhatsApp...' },
-      { id:'prazo', label:'Prazo desejado de entrega', type:'text', ph:'Ex: 10 dias, até 20/05, urgente...' },
+      { id:'email',        label:'Contact email', type:'email', required:true, ph:'your@email.com' },
+      { id:'nome_projeto', label:'Project or product name', type:'text', required:true, ph:'e.g. Clarity Method, Finance Pro Course, Renew Clinic...' },
+      { id:'objetivo', label:'What is the main goal of this copy?', type:'radio', required:true, cols:1,
+        opts:['Sell a product or service','Capture leads (email, WhatsApp)','Warm up / nurture the audience','Event or webinar signup','Institutional / branding','Other'] },
+      { id:'onde_usada', label:'Where will the copy be used?', type:'chips', hint:'Select all that apply',
+        opts:['Landing page','Email marketing','Ad (Meta Ads)','Ad (Google Ads)','Feed post','Stories / Reels','WhatsApp / DM','Video script (VSL)','Sales presentation','Other'] },
+      { id:'pagina_existe', label:'Does this page already exist?', type:'radio', cols:3,
+        opts:['Yes — I\'ll send the link','No — will be built from scratch','I\'m redesigning it'] },
+      { id:'pagina_link', label:'Link to the current page (if any)', type:'text', ph:'https://...' },
+      { id:'trafego', label:'Is traffic running? Where does it come from?', type:'text', ph:'e.g. Organic Instagram, Meta Ads, YouTube, WhatsApp...' },
+      { id:'prazo', label:'Desired delivery deadline', type:'text', ph:'e.g. 10 days, by May 20, urgent...' },
     ]
   },
-  { id:2, num:'02', title:'O Público',
-    desc:'Sem isso aqui, esquece copy boa.',
+  { id:2, num:'02', title:'The Audience',
+    desc:'Without this, forget good copy.',
     questions:[
-      { id:'avatar', label:'Descreva seu cliente ideal', type:'textarea', required:true, ph:'Quem é essa pessoa? Idade, profissão, estilo de vida, o que consome, o que sente...' },
-      { id:'dores', label:'Qual o maior problema que essa pessoa enfrenta? O que mais a frustra?', type:'textarea', required:true, ph:'O que a mantém acordada à noite? O que ela quer resolver mas não consegue?' },
-      { id:'ja_tentou', label:'O que ela já tentou antes e não funcionou?', type:'textarea', ph:'Soluções anteriores que falharam. Isso é ouro pra copy.' },
-      { id:'desejos', label:'O que ela mais deseja conquistar? O que muda com a solução?', type:'textarea', required:true, ph:'A transformação que ela busca. O estado desejado.' },
-      { id:'objecoes', label:'Quais as principais objeções? Por que ela ainda não comprou?', type:'textarea', ph:'Ex: Preço alto, não confia, já tentou outras coisas, não tem tempo, não é pra mim...' },
-      { id:'palavras', label:'Como ela descreveria o problema com as próprias palavras?', type:'textarea', ph:'Frases reais que seu público usa. Se tiver prints, cole aqui.' },
-      { id:'consciencia', label:'Qual o nível de consciência do público?', type:'radio', cols:1,
-        opts:['Não sabe que tem o problema','Sabe do problema mas não conhece soluções','Conhece soluções mas não sua oferta','Já conhece você mas não comprou','Pronto para comprar — só precisa do empurrão'] },
-      { id:'nao_para', label:'Para quem esse produto NÃO é?', type:'textarea', ph:'Definir quem não é o público ideal fortalece a copy e qualifica melhor.' },
+      { id:'avatar', label:'Describe your ideal customer', type:'textarea', required:true, ph:'Who is this person? Age, profession, lifestyle, what they consume, what they feel...' },
+      { id:'dores', label:'What\'s the biggest problem this person faces? What frustrates them most?', type:'textarea', required:true, ph:'What keeps them up at night? What do they want to solve but can\'t?' },
+      { id:'ja_tentou', label:'What have they tried before that didn\'t work?', type:'textarea', ph:'Previous solutions that failed. This is gold for copy.' },
+      { id:'desejos', label:'What do they most want to achieve? What changes with the solution?', type:'textarea', required:true, ph:'The transformation they\'re after. The desired state.' },
+      { id:'objecoes', label:'What are the main objections? Why haven\'t they bought yet?', type:'textarea', ph:'e.g. Price too high, doesn\'t trust, has tried other things, no time, not for me...' },
+      { id:'palavras', label:'How would they describe the problem in their own words?', type:'textarea', ph:'Real phrases your audience uses. If you have screenshots, paste them here.' },
+      { id:'consciencia', label:'What\'s the audience\'s awareness level?', type:'radio', cols:1,
+        opts:['Doesn\'t know they have the problem','Aware of the problem but doesn\'t know solutions','Knows solutions but not your offer','Already knows you but hasn\'t bought','Ready to buy — just needs a push'] },
+      { id:'nao_para', label:'Who is this product NOT for?', type:'textarea', ph:'Defining who\'s not the ideal audience sharpens the copy and qualifies better.' },
     ]
   },
-  { id:3, num:'03', title:'A Oferta',
-    desc:'O visual precisa servir a oferta — e a copy também.',
+  { id:3, num:'03', title:'The Offer',
+    desc:'The visuals must serve the offer — and so must the copy.',
     questions:[
-      { id:'oferta_desc', label:'Descreva o produto ou serviço em detalhes', type:'textarea', required:true, ph:'O que é, como funciona, o que inclui, formato de entrega, bônus...' },
-      { id:'promise', label:'Qual é a grande promessa — o resultado principal que você entrega?', type:'textarea', required:true, ph:'A transformação mais poderosa. Ex: "De zero a 10k mensais em 90 dias".' },
-      { id:'antes_depois', label:'Antes x depois do cliente', type:'textarea', ph:'Estado atual (o que ele sente/vive hoje) vs. estado desejado (o que ele terá/sentirá depois).' },
-      { id:'diferenciais', label:'O que torna esse produto diferente dos concorrentes?', type:'textarea', ph:'Por que é melhor ou diferente do que existe no mercado?' },
-      { id:'por_que', label:'Por que esse produto foi criado? (história real)', type:'textarea', ph:'A origem do produto. Isso gera conexão e autenticidade.' },
-      { id:'garantia', label:'Tem garantia? Qual?', type:'text', ph:'Ex: 7 dias de garantia incondicional, garantia de resultado...' },
-      { id:'preco', label:'Preço, condições e bônus', type:'textarea', ph:'Ex: R$997 à vista ou 12x R$99,70. Bônus: ebook X, mentoria Y...' },
-      { id:'escassez', label:'Existe escassez ou urgência real?', type:'textarea', ph:'Ex: apenas 50 vagas, desconto até dia 15, turma que fecha...' },
+      { id:'oferta_desc', label:'Describe the product or service in detail', type:'textarea', required:true, ph:'What it is, how it works, what\'s included, delivery format, bonuses...' },
+      { id:'promise', label:'What\'s the big promise — the main result you deliver?', type:'textarea', required:true, ph:'The most powerful transformation. e.g. "From zero to $10k/month in 90 days."' },
+      { id:'antes_depois', label:'Customer\'s before vs. after', type:'textarea', ph:'Current state (what they feel/live today) vs. desired state (what they\'ll have/feel afterward).' },
+      { id:'diferenciais', label:'What makes this product different from competitors?', type:'textarea', ph:'Why is it better or different from what already exists on the market?' },
+      { id:'por_que', label:'Why was this product created? (real story)', type:'textarea', ph:'The product\'s origin. This creates connection and authenticity.' },
+      { id:'garantia', label:'Is there a guarantee? What is it?', type:'text', ph:'e.g. 7-day unconditional guarantee, results guarantee...' },
+      { id:'preco', label:'Price, terms and bonuses', type:'textarea', ph:'e.g. $997 upfront or 12x $99.70. Bonuses: ebook X, mentorship Y...' },
+      { id:'escassez', label:'Is there real scarcity or urgency?', type:'textarea', ph:'e.g. only 50 spots, discount until the 15th, cohort closing soon...' },
     ]
   },
-  { id:4, num:'04', title:'Método & Mecanismo',
-    desc:'Aqui você sai do genérico e justifica por que funciona.',
+  { id:4, num:'04', title:'Method & Mechanism',
+    desc:'This is where you leave the generic behind and justify why it works.',
     questions:[
-      { id:'tem_metodo', label:'Existe um método ou processo próprio?', type:'radio', cols:3,
-        opts:['Sim, bem definido','Existe mas não nomeado','Não tenho método'] },
-      { id:'nome_metodo', label:'Qual o nome do método (se tiver)?', type:'text', ph:'Ex: Método Clareza, Sistema F.A.S.T., Fórmula das 3 Semanas...' },
-      { id:'como_funciona', label:'Como esse método funciona? (etapas)', type:'textarea', ph:'Descreva o processo em etapas. Ex: 1. Diagnóstico → 2. Estratégia → 3. Execução...' },
-      { id:'por_que_func', label:'Por que esse método funciona onde outros falham?', type:'textarea', ph:'O mecanismo único. O que torna sua abordagem diferente e eficaz?' },
-      { id:'analogia', label:'Existe alguma analogia simples pra explicar?', type:'textarea', ph:'Ex: "É como um GPS para o seu negócio: você só precisa saber para onde quer ir".' },
+      { id:'tem_metodo', label:'Do you have a proprietary method or process?', type:'radio', cols:3,
+        opts:['Yes, well defined','Exists but unnamed','No method'] },
+      { id:'nome_metodo', label:'What\'s the name of the method (if any)?', type:'text', ph:'e.g. Clarity Method, F.A.S.T. System, 3-Week Formula...' },
+      { id:'como_funciona', label:'How does this method work? (steps)', type:'textarea', ph:'Describe the process step by step. e.g. 1. Diagnosis → 2. Strategy → 3. Execution...' },
+      { id:'por_que_func', label:'Why does this method work where others fail?', type:'textarea', ph:'The unique mechanism. What makes your approach different and effective?' },
+      { id:'analogia', label:'Is there a simple analogy to explain it?', type:'textarea', ph:'e.g. "It\'s like a GPS for your business: you just need to know where you want to go."' },
     ]
   },
-  { id:5, num:'05', title:'Provas & Autoridade',
-    desc:'Sem prova, a copy vira promessa vazia.',
+  { id:5, num:'05', title:'Proof & Authority',
+    desc:'Without proof, copy is just an empty promise.',
     questions:[
-      { id:'autoridade', label:'Quem é você? Qual sua autoridade no assunto?', type:'textarea', required:true, ph:'Sua trajetória, formação, conquistas, experiências, aparições na mídia...' },
-      { id:'resultados', label:'Tem números ou resultados comprovados?', type:'textarea', ph:'Ex: +500 alunos formados, R$2M faturados, 98% de satisfação, 10 anos de experiência...' },
-      { id:'depoimentos', label:'Tem depoimentos ou provas sociais?', type:'radio', cols:1,
-        opts:['Sim — texto e foto','Sim — vídeos','Sim — prints de mensagens','Tenho mas preciso organizar','Não tenho ainda'] },
-      { id:'cases', label:'Tem cases de sucesso? Conte histórias reais', type:'textarea', ph:'2 ou 3 histórias de clientes com contexto, problema, solução e resultado.' },
-      { id:'midia', label:'Já apareceu em algum lugar relevante?', type:'textarea', ph:'Ex: Podcast X, Reportagem Y, Palco Z, Livro W... (se não tiver, deixe em branco)' },
+      { id:'autoridade', label:'Who are you? What\'s your authority on the subject?', type:'textarea', required:true, ph:'Your background, education, achievements, experiences, media appearances...' },
+      { id:'resultados', label:'Do you have proven numbers or results?', type:'textarea', ph:'e.g. 500+ students trained, $2M in revenue, 98% satisfaction, 10 years of experience...' },
+      { id:'depoimentos', label:'Do you have testimonials or social proof?', type:'radio', cols:1,
+        opts:['Yes — text and photo','Yes — videos','Yes — message screenshots','I have them but need to organize','Not yet'] },
+      { id:'cases', label:'Do you have success cases? Share real stories', type:'textarea', ph:'2 or 3 client stories with context, problem, solution and result.' },
+      { id:'midia', label:'Have you appeared anywhere notable?', type:'textarea', ph:'e.g. Podcast X, Feature Y, Stage Z, Book W... (leave blank if none)' },
     ]
   },
-  { id:6, num:'06', title:'Mercado & Concorrência',
-    desc:'Quem não conhece o mercado escreve copy genérica.',
+  { id:6, num:'06', title:'Market & Competition',
+    desc:'Those who don\'t know the market write generic copy.',
     questions:[
-      { id:'concorrentes', label:'Quais são os principais concorrentes?', type:'textarea', ph:'Links dos sites, perfis ou páginas de vendas de quem compete com você.' },
-      { id:'o_que_prometem', label:'O que eles prometem? Como vendem?', type:'textarea', ph:'O que os concorrentes dizem que fazem? Qual o posicionamento deles?' },
-      { id:'melhor', label:'O que você faz melhor que eles?', type:'textarea', ph:'Seus diferenciais reais em relação ao que existe no mercado.' },
-      { id:'mentira', label:'Existe alguma "mentira" ou padrão ruim do mercado que você quer quebrar?', type:'textarea', ph:'Ex: "todo mundo vende resultado fácil, mas a verdade é que..."' },
-      { id:'saturado', label:'Esse mercado está:', type:'radio', cols:3,
-        opts:['Saturado / competitivo','Em crescimento','Pouco explorado'] },
+      { id:'concorrentes', label:'Who are the main competitors?', type:'textarea', ph:'Links to sites, profiles or sales pages of those competing with you.' },
+      { id:'o_que_prometem', label:'What do they promise? How do they sell?', type:'textarea', ph:'What do competitors say they do? What\'s their positioning?' },
+      { id:'melhor', label:'What do you do better than them?', type:'textarea', ph:'Your real differentiators compared to what\'s in the market.' },
+      { id:'mentira', label:'Is there a "lie" or bad market pattern you want to break?', type:'textarea', ph:'e.g. "everyone sells easy results, but the truth is..."' },
+      { id:'saturado', label:'This market is:', type:'radio', cols:3,
+        opts:['Saturated / competitive','Growing','Underexplored'] },
     ]
   },
-  { id:7, num:'07', title:'Tom & Posicionamento',
-    desc:'Para não sair copy com cara de IA — ou de todo mundo.',
+  { id:7, num:'07', title:'Tone & Positioning',
+    desc:'So the copy doesn\'t sound like AI — or like everyone else.',
     questions:[
-      { id:'tom', label:'Tom de voz desejado', type:'chips', hint:'Selecione os que mais combinam com sua comunicação',
-        opts:['Direto e objetivo','Empático e acolhedor','Urgente e escasso','Sofisticado e elegante','Divertido e leve','Técnico e autoridade','Inspirador e motivacional','Ousado e desafiador','Simples e acessível','Storytelling (conta histórias)'] },
-      { id:'como_percebido', label:'Como você quer ser percebido?', type:'textarea', ph:'Ex: direto, técnico, provocador, acessível, premium, autoridade...' },
-      { id:'nao_quero', label:'O que você NÃO quer na comunicação?', type:'textarea', ph:'Tom, palavras, abordagens, clichês que não combinam com sua marca.' },
-      { id:'frase_marca', label:'Tem alguma frase ou ideia que representa bem sua marca?', type:'text', ph:'Um slogan, manifesto ou frase que você usa ou que te representa bem.' },
-      { id:'referencias', label:'Perfis ou marcas cuja comunicação você admira', type:'textarea', ph:'Links de landing pages, e-mails, anúncios ou perfis que você gosta da copy.' },
-      { id:'cta', label:'Qual o CTA (chamada para ação) principal?', type:'text', ph:'Ex: Quero garantir minha vaga, Comprar agora, Falar com especialista...' },
+      { id:'tom', label:'Desired tone of voice', type:'chips', hint:'Select the ones that best match your communication',
+        opts:['Direct and objective','Empathetic and welcoming','Urgent and scarce','Sophisticated and elegant','Fun and light','Technical and authoritative','Inspiring and motivational','Bold and challenging','Simple and accessible','Storytelling'] },
+      { id:'como_percebido', label:'How do you want to be perceived?', type:'textarea', ph:'e.g. direct, technical, provocative, accessible, premium, authoritative...' },
+      { id:'nao_quero', label:'What do you NOT want in your communication?', type:'textarea', ph:'Tone, words, approaches, clichés that don\'t fit your brand.' },
+      { id:'frase_marca', label:'Is there a phrase or idea that represents your brand well?', type:'text', ph:'A slogan, manifesto or phrase you use or that represents you well.' },
+      { id:'referencias', label:'Profiles or brands whose communication you admire', type:'textarea', ph:'Links to landing pages, emails, ads or profiles whose copy you like.' },
+      { id:'cta', label:'What\'s the main CTA (call to action)?', type:'text', ph:'e.g. Secure my spot, Buy now, Talk to an expert...' },
     ]
   },
-  { id:8, num:'08', title:'Estratégia & Extras',
-    desc:'O que a maioria ignora — e perde dinheiro.',
+  { id:8, num:'08', title:'Strategy & Extras',
+    desc:'What most people ignore — and lose money over.',
     questions:[
-      { id:'funil', label:'Essa copy está em qual etapa do funil?', type:'radio', cols:1,
-        opts:['Topo — público frio, nunca me ouviu falar','Meio — já me conhece, está considerando','Fundo — pronto para comprar, precisa do empurrão'] },
-      { id:'pos_conversao', label:'O que acontece depois que a pessoa converte?', type:'textarea', ph:'Sequência de e-mails, WhatsApp, onboarding, grupo... Isso muda a copy da confirmação.' },
-      { id:'vsl', label:'Tem VSL (vídeo de vendas)?', type:'radio', cols:3,
-        opts:['Sim — já gravado','Vou gravar','Não terá VSL'] },
-      { id:'headline', label:'Tem headline (título) já definido?', type:'text', ph:'Deixe em branco se quiser que sugiramos.' },
-      { id:'extra', label:'Informações adicionais', type:'textarea', ph:'Qualquer detalhe relevante que não foi abordado acima.' },
+      { id:'funil', label:'Which funnel stage is this copy in?', type:'radio', cols:1,
+        opts:['Top — cold audience, never heard of me','Middle — already knows me, considering','Bottom — ready to buy, needs the push'] },
+      { id:'pos_conversao', label:'What happens after they convert?', type:'textarea', ph:'Email sequence, WhatsApp, onboarding, group... This shapes the confirmation copy.' },
+      { id:'vsl', label:'Do you have a VSL (video sales letter)?', type:'radio', cols:3,
+        opts:['Yes — already recorded','I\'ll record it','No VSL'] },
+      { id:'headline', label:'Do you already have a headline defined?', type:'text', ph:'Leave blank if you\'d like us to suggest one.' },
+      { id:'extra', label:'Additional information', type:'textarea', ph:'Any relevant detail not covered above.' },
     ]
   },
 ];
@@ -677,7 +665,7 @@ function renderSection(sec,si){
     <section class="form-section ${si===0?'active':''}" id="sec-${si}">
       <div class="section-card">
         <header class="section-hd">
-          <p class="section-eyebrow">Seção ${sec.num} de ${pad(SECTIONS.length)}</p>
+          <p class="section-eyebrow">Section ${sec.num} of ${pad(SECTIONS.length)}</p>
           <h2 class="section-title">${sec.title}</h2>
           <p class="section-desc">${sec.desc}</p>
         </header>
@@ -685,9 +673,9 @@ function renderSection(sec,si){
           ${sec.questions.map(q=>renderQuestion(q)).join('')}
         </div>
         <footer class="section-ft">
-          <button class="btn-prev ${isFirst?'invisible':''}" onclick="goSec(-1)">← Anterior</button>
+          <button class="btn-prev ${isFirst?'invisible':''}" onclick="goSec(-1)">← Previous</button>
           <button class="btn-next" onclick="goSec(1)">
-            <span>${isLast?'Enviar briefing':'Próxima seção'}</span>
+            <span>${isLast?'Send briefing':'Next section'}</span>
             <span class="btn-arrow" aria-hidden="true">${isLast?'✓':'→'}</span>
           </button>
         </footer>
@@ -696,7 +684,7 @@ function renderSection(sec,si){
 }
 function renderQuestion(q){
   const hint = q.hint?`<p class="q-hint">${q.hint}</p>`:'';
-  const req  = q.required?`<span class="q-req">obrigatório</span>`:'';
+  const req  = q.required?`<span class="q-req">required</span>`:'';
   let input='';
   if(q.type==='text'||q.type==='email'){
     input=`<input class="field" id="fi-${q.id}" type="${q.type}" placeholder="${esc(q.ph||'')}" value="${esc(ans[q.id]||'')}" oninput="saveF('${q.id}',this.value)" autocomplete="off" spellcheck="false">`;
@@ -769,8 +757,8 @@ function validateSec(idx){
     let val=fi?fi.value.trim():(ans[q.id]||'');
     if(fi)ans[q.id]=val;
     let msg='';
-    if(!val)msg='Este campo é obrigatório';
-    else if(q.type==='email'&&!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(val))msg='Insira um e-mail válido';
+    if(!val)msg='This field is required';
+    else if(q.type==='email'&&!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(val))msg='Please enter a valid email';
     showErr(q.id,msg);
     if(fi)fi.classList.toggle('has-error',!!msg);
     if(msg)ok=false;
@@ -822,8 +810,8 @@ function submitForm(){
       lines.push(`${q.label}\n→ ${display}`);
     });
   });
-  lines.push(`\n${'═'.repeat(40)}\nEnviado em: ${new Date().toLocaleString('pt-BR')}`);
-  const cliente='[COPY] '+(ans['nome_projeto']||ans['email']||'Cliente');
+  lines.push(`\n${'═'.repeat(40)}\nSent on: ${new Date().toLocaleString('en-US')}`);
+  const cliente='[COPY] '+(ans['nome_projeto']||ans['email']||'Client');
   const email=ans['email']||'';
   document.getElementById('ty').classList.add('show');
   document.body.style.overflow='hidden';
@@ -863,7 +851,7 @@ function downloadSummary(){
     lines.push('');
   });
   lines.push('═'.repeat(52));
-  lines.push(`Enviado em: ${new Date().toLocaleString('pt-BR')}`);
+  lines.push(`Sent on: ${new Date().toLocaleString('en-US')}`);
   const blob=new Blob([lines.join('\n')],{type:'text/plain;charset=utf-8'});
   const a=document.createElement('a');
   a.href=URL.createObjectURL(blob);
