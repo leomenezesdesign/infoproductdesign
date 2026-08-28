@@ -1,0 +1,891 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Briefing — Copy | Infoproduct Design</title>
+<meta name="description" content="Briefing de copywriting da Infoproduct Design. Suas respostas guiam cada palavra escrita." />
+<meta name="robots" content="noindex" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;600&display=swap" rel="stylesheet" />
+<script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+<script>emailjs.init('9D5uy-dAN9zBz7V8a');</script>
+<!-- Meta Pixel Code -->
+<script>
+!function(f,b,e,v,n,t,s)
+{if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+n.queue=[];t=b.createElement(e);t.async=!0;
+t.src=v;s=b.getElementsByTagName(e)[0];
+s.parentNode.insertBefore(t,s)}(window, document,'script',
+'https://connect.facebook.net/en_US/fbevents.js');
+fbq('init', '913102285202939');
+fbq('track', 'PageView');
+</script>
+<noscript><img height="1" width="1" style="display:none"
+src="https://www.facebook.com/tr?id=913102285202939&ev=PageView&noscript=1"/></noscript>
+<!-- End Meta Pixel Code -->
+
+<style>
+:root{
+  --bg:#0d0d0d;
+  --card:#161616;
+  --card-line:rgba(255,255,255,.09);
+  --accent:#82FF1F;
+  --accent-soft:rgba(130,255,31,.14);
+  --text:#f4f4f2;
+  --muted:#9a9a9a;
+  --muted-dark:#6f6f6f;
+  --ink:#141414;
+  --ease:cubic-bezier(.16,.84,.32,1);
+}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+body{
+  font-family:'Manrope',system-ui,sans-serif;
+  background:var(--bg);
+  color:var(--text);
+  min-height:100vh;
+  line-height:1.5;
+  -webkit-font-smoothing:antialiased;
+  overflow-x:hidden;
+}
+body::before{
+  content:"";
+  position:fixed;inset:0;z-index:-1;pointer-events:none;
+  background-image:
+    linear-gradient(rgba(255,255,255,.04) 1px,transparent 1px),
+    linear-gradient(90deg,rgba(255,255,255,.04) 1px,transparent 1px);
+  background-size:92px 92px;
+  -webkit-mask-image:radial-gradient(ellipse 82% 72% at 50% 40%,transparent 28%,#000 100%);
+  mask-image:radial-gradient(ellipse 82% 72% at 50% 40%,transparent 28%,#000 100%);
+}
+a{color:inherit;text-decoration:none}
+strong,b{font-weight:600}
+
+/* Header — floating glass nav */
+.site-header{
+  position:fixed;top:18px;left:0;right:0;z-index:100;
+  display:flex;justify-content:center;pointer-events:none;
+}
+.header-inner{
+  pointer-events:auto;
+  width:min(1180px,calc(100% - 40px));
+  display:flex;align-items:center;justify-content:space-between;
+  padding:9px 9px 9px 24px;
+  background:rgba(18,18,18,.55);
+  -webkit-backdrop-filter:blur(20px) saturate(170%);
+  backdrop-filter:blur(20px) saturate(170%);
+  border:1px solid rgba(255,255,255,.1);
+  border-radius:999px;
+  box-shadow:0 12px 40px rgba(0,0,0,.45),inset 0 1px 0 rgba(255,255,255,.06);
+}
+.logo{display:flex;align-items:center}
+.logo-img{height:30px;width:auto;display:block}
+.btn-light{
+  background:var(--text);color:var(--ink);
+  padding:12px 22px;border:0;border-radius:999px;
+  font-family:inherit;font-size:15px;font-weight:600;
+  cursor:pointer;text-decoration:none;
+  transition:transform .25s var(--ease),box-shadow .25s var(--ease);
+}
+.btn-light:hover{transform:translateY(-2px);box-shadow:0 8px 24px rgba(255,255,255,.15)}
+
+/* 3D accent button (same as landing) */
+.btn-accent{
+  position:relative;
+  display:inline-flex;align-items:center;
+  gap:22px;
+  padding:14px 14px 14px 32px;
+  color:var(--ink);
+  font-family:inherit;font-size:15px;font-weight:600;
+  border:0;border-radius:999px;
+  background:linear-gradient(180deg,#9bff45 0%,#82ff1f 46%,#66dd08 100%);
+  box-shadow:
+    inset 0 2px 1px rgba(255,255,255,.85),
+    inset 0 -11px 16px rgba(52,102,12,.5),
+    0 5px 0 #316604,
+    0 13px 24px rgba(0,0,0,.45),
+    0 0 38px rgba(130,255,31,.32);
+  cursor:pointer;
+  transition:transform .4s var(--ease),box-shadow .4s var(--ease),filter .3s var(--ease);
+}
+.btn-accent:hover{
+  transform:translateY(-3px);filter:brightness(1.04);
+  box-shadow:
+    inset 0 2px 1px rgba(255,255,255,.95),
+    inset 0 -11px 16px rgba(52,102,12,.5),
+    0 8px 0 #316604,
+    0 20px 34px rgba(0,0,0,.5),
+    0 0 60px rgba(130,255,31,.5);
+}
+.btn-accent:active{
+  transform:translateY(4px);
+  box-shadow:
+    inset 0 2px 1px rgba(255,255,255,.7),
+    inset 0 -7px 12px rgba(52,102,12,.5),
+    0 1px 0 #316604,
+    0 5px 12px rgba(0,0,0,.4),
+    0 0 30px rgba(130,255,31,.3);
+}
+.btn-accent .arrow{
+  position:relative;overflow:hidden;flex-shrink:0;
+  width:40px;height:40px;border-radius:50%;
+  background:linear-gradient(160deg,#2c2c2c,#050505);
+  box-shadow:
+    inset 0 2px 3px rgba(255,255,255,.18),
+    inset 0 -4px 7px rgba(0,0,0,.7),
+    0 2px 5px rgba(0,0,0,.45);
+}
+.btn-accent .arrow::before,
+.btn-accent .arrow::after{
+  content:"→";
+  position:absolute;inset:0;
+  display:grid;place-items:center;
+  color:#fff;font-size:17px;font-weight:600;
+  transition:transform .7s var(--ease);
+}
+.btn-accent .arrow::after{transform:translate(-135%,0)}
+.btn-accent:hover .arrow::before{transform:translate(135%,0)}
+.btn-accent:hover .arrow::after{transform:translate(0,0)}
+.btn-accent.submit-btn .arrow::before,
+.btn-accent.submit-btn .arrow::after{content:"✓"}
+
+/* Cover */
+.cover{
+  position:fixed;inset:0;z-index:80;
+  display:grid;place-items:center;
+  padding:120px 24px 40px;
+  overflow-y:auto;
+  background:var(--bg);
+  transition:opacity .45s var(--ease),transform .45s var(--ease);
+}
+.cover.hiding{opacity:0;transform:translateY(-14px);pointer-events:none}
+.cover-inner{
+  width:100%;max-width:640px;
+  background:var(--card);
+  border:1px solid var(--card-line);
+  border-radius:24px;
+  padding:44px 40px;
+  box-shadow:0 30px 80px rgba(0,0,0,.5);
+}
+.cover-badge{
+  display:inline-flex;align-items:center;gap:8px;
+  background:var(--accent-soft);color:var(--accent);
+  padding:6px 12px;border-radius:999px;
+  font-size:12.5px;font-weight:600;letter-spacing:.02em;
+}
+.cover-title{
+  font-size:clamp(44px,7vw,72px);
+  font-weight:400;line-height:.98;letter-spacing:-.03em;
+  margin:20px 0 16px;
+}
+.cover-title em{font-style:normal;color:var(--accent);font-weight:600}
+.cover-sub{color:var(--muted);font-size:16px;max-width:540px}
+.cover-body{margin:32px 0 26px;display:flex;flex-direction:column;gap:14px}
+.cover-item{display:flex;gap:14px;align-items:flex-start}
+.cover-icon{
+  flex-shrink:0;
+  width:34px;height:34px;border-radius:10px;
+  background:var(--accent-soft);color:var(--accent);
+  display:grid;place-items:center;
+  font-size:16px;font-weight:600;
+}
+.cover-item-text{color:var(--muted);font-size:14.5px;line-height:1.55}
+.cover-item-text strong{color:var(--text)}
+.cover-ft{margin-top:8px;display:flex;flex-direction:column;gap:12px}
+.cover-ft .btn-accent{width:100%;justify-content:center}
+.cover-note{color:var(--muted-dark);font-size:12.5px;text-align:center;line-height:1.5}
+.cover-note strong{color:var(--muted)}
+
+/* Main / briefing container */
+.briefing{padding:110px 20px 60px;max-width:820px;margin:0 auto}
+
+/* Progress pills */
+.progress-container{
+  position:sticky;top:88px;z-index:40;
+  padding:14px 0;
+  background:linear-gradient(180deg,rgba(13,13,13,.9) 65%,transparent);
+  -webkit-backdrop-filter:blur(8px);backdrop-filter:blur(8px);
+  margin-bottom:24px;
+}
+.progress-pills{
+  display:flex;align-items:center;justify-content:center;gap:6px;
+  flex-wrap:wrap;
+}
+.prog-pill{
+  width:34px;height:34px;border-radius:999px;
+  display:grid;place-items:center;
+  font-size:12px;font-weight:600;color:var(--muted-dark);
+  background:rgba(255,255,255,.04);
+  border:1px solid var(--card-line);
+  transition:all .35s var(--ease);
+}
+.prog-pill.done{background:var(--accent-soft);color:var(--accent);border-color:var(--accent-soft)}
+.prog-pill.active{
+  background:var(--accent);color:var(--ink);border-color:var(--accent);
+  box-shadow:0 0 0 4px rgba(130,255,31,.18);
+  transform:scale(1.05);
+}
+.prog-sep{width:14px;height:1px;background:var(--card-line)}
+
+/* Section */
+.form-section{display:none}
+.form-section.active{display:block}
+.form-section.slide-out-left{animation:slideOutL .28s var(--ease) forwards}
+.form-section.slide-out-right{animation:slideOutR .28s var(--ease) forwards}
+.form-section.slide-in-right{animation:slideInR .4s var(--ease)}
+.form-section.slide-in-left{animation:slideInL .4s var(--ease)}
+@keyframes slideOutL{to{opacity:0;transform:translateX(-24px)}}
+@keyframes slideOutR{to{opacity:0;transform:translateX(24px)}}
+@keyframes slideInR{from{opacity:0;transform:translateX(24px)}}
+@keyframes slideInL{from{opacity:0;transform:translateX(-24px)}}
+
+.section-card{
+  background:var(--card);
+  border:1px solid var(--card-line);
+  border-radius:22px;
+  padding:36px 34px;
+  box-shadow:0 20px 60px rgba(0,0,0,.35);
+}
+.section-hd{position:relative;padding-bottom:22px;border-bottom:1px solid var(--card-line);margin-bottom:26px}
+.section-eyebrow{font-size:12.5px;color:var(--muted-dark);letter-spacing:.05em;text-transform:uppercase;margin-bottom:8px}
+.section-title{
+  font-size:clamp(28px,4vw,40px);
+  font-weight:400;letter-spacing:-.02em;line-height:1.08;
+}
+.section-desc{margin-top:10px;color:var(--muted);font-size:15px}
+
+/* Questions */
+.questions{display:flex;flex-direction:column;gap:24px}
+.question{}
+.q-label-row{display:flex;align-items:center;gap:10px;justify-content:space-between;margin-bottom:8px;flex-wrap:wrap}
+.q-label{font-size:15px;font-weight:600;color:var(--text);line-height:1.4}
+.q-req{
+  font-size:10.5px;color:var(--accent);
+  background:var(--accent-soft);
+  padding:3px 8px;border-radius:999px;
+  letter-spacing:.02em;
+}
+.q-hint{color:var(--muted-dark);font-size:12.5px;margin-bottom:10px}
+
+/* Fields */
+.field{
+  width:100%;
+  background:rgba(255,255,255,.04);
+  border:1px solid var(--card-line);
+  border-radius:14px;
+  color:var(--text);
+  font-family:inherit;font-size:15px;
+  padding:14px 18px;
+  outline:none;
+  transition:border-color .2s,background .2s;
+}
+.field::placeholder{color:var(--muted-dark)}
+.field:focus{border-color:var(--accent);background:rgba(130,255,31,.04)}
+.field.has-error{border-color:#ff5a4b;background:rgba(255,90,75,.06)}
+textarea.field{min-height:104px;resize:vertical;line-height:1.55}
+
+.err-msg{
+  display:none;
+  color:#ff8078;font-size:12.5px;
+  margin-top:6px;padding-left:6px;
+}
+.err-msg.show{display:block}
+
+/* Radio / checkbox option cards */
+.opts-grid{
+  display:grid;grid-template-columns:1fr 1fr;gap:10px;
+}
+.opts-grid.col1{grid-template-columns:1fr}
+.opts-grid.col3{grid-template-columns:repeat(3,1fr)}
+.opt-card{
+  display:flex;align-items:center;gap:12px;
+  background:rgba(255,255,255,.03);
+  border:1px solid var(--card-line);
+  border-radius:14px;
+  padding:14px 16px;
+  cursor:pointer;
+  transition:all .2s var(--ease);
+  color:var(--text);
+}
+.opt-card:hover{background:rgba(255,255,255,.06);border-color:rgba(255,255,255,.16)}
+.opt-card.chosen{
+  background:var(--accent-soft);
+  border-color:var(--accent);
+  color:var(--text);
+}
+.opt-radio{
+  width:18px;height:18px;border-radius:50%;
+  border:1.5px solid var(--muted-dark);
+  display:grid;place-items:center;
+  flex-shrink:0;
+  transition:border-color .2s;
+}
+.opt-radio-dot{
+  width:8px;height:8px;border-radius:50%;
+  background:var(--accent);
+  transform:scale(0);
+  transition:transform .2s var(--ease);
+}
+.opt-card.chosen .opt-radio{border-color:var(--accent)}
+.opt-card.chosen .opt-radio-dot{transform:scale(1)}
+.opt-box{
+  width:18px;height:18px;border-radius:5px;
+  border:1.5px solid var(--muted-dark);
+  display:grid;place-items:center;
+  flex-shrink:0;background:transparent;
+  transition:all .2s;
+}
+.opt-card.chosen .opt-box{background:var(--accent);border-color:var(--accent)}
+.opt-box svg{opacity:0;transition:opacity .2s}
+.opt-card.chosen .opt-box svg{opacity:1}
+.opt-box svg path{stroke:var(--ink) !important}
+.opt-label{font-size:14.5px;line-height:1.4}
+
+/* Chips */
+.chips-wrap{display:flex;flex-wrap:wrap;gap:8px}
+.chip{
+  padding:9px 16px;
+  background:rgba(255,255,255,.04);
+  border:1px solid var(--card-line);
+  border-radius:999px;
+  font-size:13.5px;font-weight:500;
+  cursor:pointer;user-select:none;
+  transition:all .2s var(--ease);
+  color:var(--text);
+}
+.chip:hover{background:rgba(255,255,255,.08)}
+.chip.chosen{background:var(--accent);color:var(--ink);border-color:var(--accent);font-weight:600}
+
+/* Section footer nav */
+.section-ft{
+  display:flex;justify-content:space-between;align-items:center;gap:16px;
+  margin-top:32px;padding-top:24px;border-top:1px solid var(--card-line);
+}
+.btn-prev{
+  background:transparent;
+  border:1px solid var(--card-line);
+  color:var(--muted);
+  padding:12px 22px;border-radius:999px;
+  font-family:inherit;font-size:14.5px;font-weight:500;
+  cursor:pointer;
+  transition:all .2s var(--ease);
+}
+.btn-prev:hover{background:rgba(255,255,255,.06);color:var(--text);border-color:rgba(255,255,255,.2)}
+.btn-prev.invisible{visibility:hidden}
+.btn-next{
+  position:relative;display:inline-flex;align-items:center;gap:16px;
+  padding:12px 14px 12px 28px;
+  color:var(--ink);
+  font-family:inherit;font-size:15px;font-weight:600;
+  border:0;border-radius:999px;
+  background:linear-gradient(180deg,#9bff45 0%,#82ff1f 46%,#66dd08 100%);
+  box-shadow:
+    inset 0 2px 1px rgba(255,255,255,.85),
+    inset 0 -11px 16px rgba(52,102,12,.5),
+    0 5px 0 #316604,
+    0 13px 24px rgba(0,0,0,.45),
+    0 0 30px rgba(130,255,31,.28);
+  cursor:pointer;
+  transition:transform .4s var(--ease),box-shadow .4s var(--ease),filter .3s var(--ease);
+}
+.btn-next:hover{
+  transform:translateY(-3px);filter:brightness(1.04);
+  box-shadow:
+    inset 0 2px 1px rgba(255,255,255,.95),
+    inset 0 -11px 16px rgba(52,102,12,.5),
+    0 8px 0 #316604,
+    0 18px 30px rgba(0,0,0,.5),
+    0 0 46px rgba(130,255,31,.5);
+}
+.btn-next:active{
+  transform:translateY(4px);
+  box-shadow:
+    inset 0 2px 1px rgba(255,255,255,.7),
+    0 1px 0 #316604,
+    0 5px 12px rgba(0,0,0,.4);
+}
+.btn-arrow{
+  display:grid;place-items:center;
+  width:32px;height:32px;border-radius:50%;
+  background:linear-gradient(160deg,#2c2c2c,#050505);
+  color:#fff;font-size:15px;font-weight:600;
+  box-shadow:
+    inset 0 2px 3px rgba(255,255,255,.18),
+    inset 0 -4px 7px rgba(0,0,0,.7);
+}
+
+/* Thank you */
+.ty{
+  position:fixed;inset:0;z-index:120;
+  background:rgba(13,13,13,.9);
+  -webkit-backdrop-filter:blur(20px);backdrop-filter:blur(20px);
+  display:none;place-items:center;
+  padding:40px 20px;
+  opacity:0;
+  transition:opacity .4s var(--ease);
+}
+.ty.show{display:grid;opacity:1}
+.ty-card{
+  background:var(--card);
+  border:1px solid var(--card-line);
+  border-radius:26px;
+  padding:56px 40px;
+  max-width:520px;width:100%;
+  text-align:center;
+  box-shadow:0 40px 100px rgba(0,0,0,.5),inset 0 1px 0 rgba(255,255,255,.05);
+  animation:tyIn .55s var(--ease);
+}
+@keyframes tyIn{from{opacity:0;transform:translateY(20px) scale(.96)}to{opacity:1;transform:translateY(0) scale(1)}}
+.ty-check-wrap{
+  position:relative;
+  width:96px;height:96px;margin:0 auto 24px;
+  border-radius:50%;
+  background:var(--accent-soft);
+  display:grid;place-items:center;
+}
+.ty-check-wrap::before{
+  content:"";position:absolute;inset:-8px;border-radius:50%;
+  background:radial-gradient(circle,rgba(130,255,31,.25),transparent 70%);
+}
+.ty-check{color:var(--accent);font-size:44px;line-height:1;position:relative}
+.ty-headline{
+  font-size:clamp(38px,6vw,56px);
+  font-weight:400;letter-spacing:-.02em;line-height:1;
+}
+.ty-headline em{font-style:normal;color:var(--accent);font-weight:600}
+.ty-sub{margin:16px auto 30px;color:var(--muted);font-size:15.5px;max-width:400px}
+.ty-dl{
+  display:inline-flex;align-items:center;gap:8px;
+  background:transparent;
+  border:1px solid var(--card-line);color:var(--text);
+  padding:12px 22px;border-radius:999px;
+  font-family:inherit;font-size:14px;font-weight:600;
+  cursor:pointer;
+  transition:all .2s;
+}
+.ty-dl:hover{background:rgba(255,255,255,.06);border-color:var(--accent);color:var(--accent)}
+
+/* Responsive */
+@media (max-width:640px){
+  .cover-inner{padding:32px 24px;border-radius:20px}
+  .section-card{padding:26px 20px;border-radius:18px}
+  .opts-grid,.opts-grid.col3{grid-template-columns:1fr}
+  .section-ft{flex-direction:column-reverse;align-items:stretch}
+  .btn-prev,.btn-next{width:100%;justify-content:center}
+  .progress-container{top:78px}
+  .prog-pill{width:28px;height:28px;font-size:11px}
+  .prog-sep{width:8px}
+}
+</style>
+</head>
+<body>
+
+<!-- HEADER -->
+<header class="site-header">
+  <div class="header-inner">
+    <a href="/" class="logo">
+      <img src="assets/logo.svg" alt="Infoproduct Design" class="logo-img" />
+    </a>
+    <a href="/#contact" class="btn-light">Contact me</a>
+  </div>
+</header>
+
+<!-- COVER -->
+<div id="cover" class="cover">
+  <div class="cover-inner">
+    <span class="cover-badge">Briefing</span>
+    <h1 class="cover-title">Copy &amp;<br/><em>Texto</em></h1>
+    <p class="cover-sub">Suas respostas guiarão cada palavra escrita. Quanto mais detalhes, mais assertiva será a comunicação.</p>
+
+    <div class="cover-body">
+      <div class="cover-item">
+        <div class="cover-icon">01</div>
+        <p class="cover-item-text">É importante que você responda as questões com atenção, pois serão a <strong>base de toda a copy</strong> que iremos desenvolver juntos.</p>
+      </div>
+      <div class="cover-item">
+        <div class="cover-icon">02</div>
+        <p class="cover-item-text">As respostas são <strong>confidenciais</strong> e não serão compartilhadas com terceiros.</p>
+      </div>
+      <div class="cover-item">
+        <div class="cover-icon">03</div>
+        <p class="cover-item-text">O briefing é ideal para entendermos bem a oferta e o público e desenvolver uma <strong>copy forte, persuasiva e de grande valor</strong>.</p>
+      </div>
+    </div>
+
+    <div class="cover-ft">
+      <button class="btn-accent" onclick="startBriefing()" style="width:100%;justify-content:center">
+        Iniciar briefing
+        <span class="arrow" aria-hidden="true"></span>
+      </button>
+      <p class="cover-note"><strong>Não é necessário responder todas as perguntas.</strong> Mas quanto mais detalhes, melhor o resultado.</p>
+    </div>
+  </div>
+</div>
+
+<!-- BRIEFING -->
+<main class="briefing">
+  <div class="progress-container">
+    <div id="progress-pills" class="progress-pills"></div>
+  </div>
+  <div id="main"></div>
+</main>
+
+<!-- THANK YOU -->
+<div id="ty" class="ty" role="dialog" aria-modal="true" aria-label="Briefing enviado">
+  <div class="ty-card">
+    <div class="ty-check-wrap">
+      <span class="ty-check">✓</span>
+    </div>
+    <h1 class="ty-headline">Briefing<br/><em>recebido.</em></h1>
+    <p class="ty-sub">Em breve entramos em contato pelo e-mail informado. Obrigado por confiar no nosso trabalho!</p>
+    <button class="ty-dl" onclick="downloadSummary()">
+      <svg width="14" height="14" viewBox="0 0 14 14" fill="none" aria-hidden="true">
+        <path d="M7 1v9M3.5 6.5L7 10.5 10.5 6.5M1 13h12" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
+      </svg>
+      Baixar resumo
+    </button>
+  </div>
+</div>
+
+<script>
+/* ══════════════════════════════════
+   DATA
+══════════════════════════════════ */
+const SECTIONS = [
+  { id:1, num:'01', title:'O Projeto',
+    desc:'Aqui você entende o jogo antes de escrever qualquer palavra.',
+    questions:[
+      { id:'email',        label:'E-mail de contato', type:'email', required:true, ph:'seu@email.com' },
+      { id:'nome_projeto', label:'Nome do projeto ou produto', type:'text', required:true, ph:'Ex: Método Clareza, Curso Finanças Pro, Clínica Renovar...' },
+      { id:'objetivo', label:'Qual é o objetivo principal da copy?', type:'radio', required:true, cols:1,
+        opts:['Vender um produto ou serviço','Capturar leads (e-mail, WhatsApp)','Aquecer audiência / nutrir','Inscrição em evento ou webinar','Institucional / branding','Outro'] },
+      { id:'onde_usada', label:'Onde a copy será usada?', type:'chips', hint:'Selecione todas que se aplicam',
+        opts:['Landing page','E-mail marketing','Anúncio (Meta Ads)','Anúncio (Google Ads)','Post de feed','Stories / Reels','WhatsApp / Direct','Roteiro de vídeo (VSL)','Apresentação comercial','Outro'] },
+      { id:'pagina_existe', label:'Essa página já existe?', type:'radio', cols:3,
+        opts:['Sim — enviarei o link','Não — será criada do zero','Estou reformulando'] },
+      { id:'pagina_link', label:'Link da página atual (se existir)', type:'text', ph:'https://...' },
+      { id:'trafego', label:'Existe tráfego rodando? De onde vem?', type:'text', ph:'Ex: Instagram orgânico, Meta Ads, YouTube, WhatsApp...' },
+      { id:'prazo', label:'Prazo desejado de entrega', type:'text', ph:'Ex: 10 dias, até 20/05, urgente...' },
+    ]
+  },
+  { id:2, num:'02', title:'O Público',
+    desc:'Sem isso aqui, esquece copy boa.',
+    questions:[
+      { id:'avatar', label:'Descreva seu cliente ideal', type:'textarea', required:true, ph:'Quem é essa pessoa? Idade, profissão, estilo de vida, o que consome, o que sente...' },
+      { id:'dores', label:'Qual o maior problema que essa pessoa enfrenta? O que mais a frustra?', type:'textarea', required:true, ph:'O que a mantém acordada à noite? O que ela quer resolver mas não consegue?' },
+      { id:'ja_tentou', label:'O que ela já tentou antes e não funcionou?', type:'textarea', ph:'Soluções anteriores que falharam. Isso é ouro pra copy.' },
+      { id:'desejos', label:'O que ela mais deseja conquistar? O que muda com a solução?', type:'textarea', required:true, ph:'A transformação que ela busca. O estado desejado.' },
+      { id:'objecoes', label:'Quais as principais objeções? Por que ela ainda não comprou?', type:'textarea', ph:'Ex: Preço alto, não confia, já tentou outras coisas, não tem tempo, não é pra mim...' },
+      { id:'palavras', label:'Como ela descreveria o problema com as próprias palavras?', type:'textarea', ph:'Frases reais que seu público usa. Se tiver prints, cole aqui.' },
+      { id:'consciencia', label:'Qual o nível de consciência do público?', type:'radio', cols:1,
+        opts:['Não sabe que tem o problema','Sabe do problema mas não conhece soluções','Conhece soluções mas não sua oferta','Já conhece você mas não comprou','Pronto para comprar — só precisa do empurrão'] },
+      { id:'nao_para', label:'Para quem esse produto NÃO é?', type:'textarea', ph:'Definir quem não é o público ideal fortalece a copy e qualifica melhor.' },
+    ]
+  },
+  { id:3, num:'03', title:'A Oferta',
+    desc:'O visual precisa servir a oferta — e a copy também.',
+    questions:[
+      { id:'oferta_desc', label:'Descreva o produto ou serviço em detalhes', type:'textarea', required:true, ph:'O que é, como funciona, o que inclui, formato de entrega, bônus...' },
+      { id:'promise', label:'Qual é a grande promessa — o resultado principal que você entrega?', type:'textarea', required:true, ph:'A transformação mais poderosa. Ex: "De zero a 10k mensais em 90 dias".' },
+      { id:'antes_depois', label:'Antes x depois do cliente', type:'textarea', ph:'Estado atual (o que ele sente/vive hoje) vs. estado desejado (o que ele terá/sentirá depois).' },
+      { id:'diferenciais', label:'O que torna esse produto diferente dos concorrentes?', type:'textarea', ph:'Por que é melhor ou diferente do que existe no mercado?' },
+      { id:'por_que', label:'Por que esse produto foi criado? (história real)', type:'textarea', ph:'A origem do produto. Isso gera conexão e autenticidade.' },
+      { id:'garantia', label:'Tem garantia? Qual?', type:'text', ph:'Ex: 7 dias de garantia incondicional, garantia de resultado...' },
+      { id:'preco', label:'Preço, condições e bônus', type:'textarea', ph:'Ex: R$997 à vista ou 12x R$99,70. Bônus: ebook X, mentoria Y...' },
+      { id:'escassez', label:'Existe escassez ou urgência real?', type:'textarea', ph:'Ex: apenas 50 vagas, desconto até dia 15, turma que fecha...' },
+    ]
+  },
+  { id:4, num:'04', title:'Método & Mecanismo',
+    desc:'Aqui você sai do genérico e justifica por que funciona.',
+    questions:[
+      { id:'tem_metodo', label:'Existe um método ou processo próprio?', type:'radio', cols:3,
+        opts:['Sim, bem definido','Existe mas não nomeado','Não tenho método'] },
+      { id:'nome_metodo', label:'Qual o nome do método (se tiver)?', type:'text', ph:'Ex: Método Clareza, Sistema F.A.S.T., Fórmula das 3 Semanas...' },
+      { id:'como_funciona', label:'Como esse método funciona? (etapas)', type:'textarea', ph:'Descreva o processo em etapas. Ex: 1. Diagnóstico → 2. Estratégia → 3. Execução...' },
+      { id:'por_que_func', label:'Por que esse método funciona onde outros falham?', type:'textarea', ph:'O mecanismo único. O que torna sua abordagem diferente e eficaz?' },
+      { id:'analogia', label:'Existe alguma analogia simples pra explicar?', type:'textarea', ph:'Ex: "É como um GPS para o seu negócio: você só precisa saber para onde quer ir".' },
+    ]
+  },
+  { id:5, num:'05', title:'Provas & Autoridade',
+    desc:'Sem prova, a copy vira promessa vazia.',
+    questions:[
+      { id:'autoridade', label:'Quem é você? Qual sua autoridade no assunto?', type:'textarea', required:true, ph:'Sua trajetória, formação, conquistas, experiências, aparições na mídia...' },
+      { id:'resultados', label:'Tem números ou resultados comprovados?', type:'textarea', ph:'Ex: +500 alunos formados, R$2M faturados, 98% de satisfação, 10 anos de experiência...' },
+      { id:'depoimentos', label:'Tem depoimentos ou provas sociais?', type:'radio', cols:1,
+        opts:['Sim — texto e foto','Sim — vídeos','Sim — prints de mensagens','Tenho mas preciso organizar','Não tenho ainda'] },
+      { id:'cases', label:'Tem cases de sucesso? Conte histórias reais', type:'textarea', ph:'2 ou 3 histórias de clientes com contexto, problema, solução e resultado.' },
+      { id:'midia', label:'Já apareceu em algum lugar relevante?', type:'textarea', ph:'Ex: Podcast X, Reportagem Y, Palco Z, Livro W... (se não tiver, deixe em branco)' },
+    ]
+  },
+  { id:6, num:'06', title:'Mercado & Concorrência',
+    desc:'Quem não conhece o mercado escreve copy genérica.',
+    questions:[
+      { id:'concorrentes', label:'Quais são os principais concorrentes?', type:'textarea', ph:'Links dos sites, perfis ou páginas de vendas de quem compete com você.' },
+      { id:'o_que_prometem', label:'O que eles prometem? Como vendem?', type:'textarea', ph:'O que os concorrentes dizem que fazem? Qual o posicionamento deles?' },
+      { id:'melhor', label:'O que você faz melhor que eles?', type:'textarea', ph:'Seus diferenciais reais em relação ao que existe no mercado.' },
+      { id:'mentira', label:'Existe alguma "mentira" ou padrão ruim do mercado que você quer quebrar?', type:'textarea', ph:'Ex: "todo mundo vende resultado fácil, mas a verdade é que..."' },
+      { id:'saturado', label:'Esse mercado está:', type:'radio', cols:3,
+        opts:['Saturado / competitivo','Em crescimento','Pouco explorado'] },
+    ]
+  },
+  { id:7, num:'07', title:'Tom & Posicionamento',
+    desc:'Para não sair copy com cara de IA — ou de todo mundo.',
+    questions:[
+      { id:'tom', label:'Tom de voz desejado', type:'chips', hint:'Selecione os que mais combinam com sua comunicação',
+        opts:['Direto e objetivo','Empático e acolhedor','Urgente e escasso','Sofisticado e elegante','Divertido e leve','Técnico e autoridade','Inspirador e motivacional','Ousado e desafiador','Simples e acessível','Storytelling (conta histórias)'] },
+      { id:'como_percebido', label:'Como você quer ser percebido?', type:'textarea', ph:'Ex: direto, técnico, provocador, acessível, premium, autoridade...' },
+      { id:'nao_quero', label:'O que você NÃO quer na comunicação?', type:'textarea', ph:'Tom, palavras, abordagens, clichês que não combinam com sua marca.' },
+      { id:'frase_marca', label:'Tem alguma frase ou ideia que representa bem sua marca?', type:'text', ph:'Um slogan, manifesto ou frase que você usa ou que te representa bem.' },
+      { id:'referencias', label:'Perfis ou marcas cuja comunicação você admira', type:'textarea', ph:'Links de landing pages, e-mails, anúncios ou perfis que você gosta da copy.' },
+      { id:'cta', label:'Qual o CTA (chamada para ação) principal?', type:'text', ph:'Ex: Quero garantir minha vaga, Comprar agora, Falar com especialista...' },
+    ]
+  },
+  { id:8, num:'08', title:'Estratégia & Extras',
+    desc:'O que a maioria ignora — e perde dinheiro.',
+    questions:[
+      { id:'funil', label:'Essa copy está em qual etapa do funil?', type:'radio', cols:1,
+        opts:['Topo — público frio, nunca me ouviu falar','Meio — já me conhece, está considerando','Fundo — pronto para comprar, precisa do empurrão'] },
+      { id:'pos_conversao', label:'O que acontece depois que a pessoa converte?', type:'textarea', ph:'Sequência de e-mails, WhatsApp, onboarding, grupo... Isso muda a copy da confirmação.' },
+      { id:'vsl', label:'Tem VSL (vídeo de vendas)?', type:'radio', cols:3,
+        opts:['Sim — já gravado','Vou gravar','Não terá VSL'] },
+      { id:'headline', label:'Tem headline (título) já definido?', type:'text', ph:'Deixe em branco se quiser que sugiramos.' },
+      { id:'extra', label:'Informações adicionais', type:'textarea', ph:'Qualquer detalhe relevante que não foi abordado acima.' },
+    ]
+  },
+];
+
+/* STATE */
+let curSec = 0;
+const ans = {};
+
+/* UTILS */
+function esc(s){return String(s).replace(/&/g,'&amp;').replace(/"/g,'&quot;').replace(/</g,'&lt;').replace(/>/g,'&gt;')}
+function pad(n){return String(n).padStart(2,'0')}
+
+/* RENDER */
+function renderAll(){
+  document.getElementById('main').innerHTML = SECTIONS.map((sec,si)=>renderSection(sec,si)).join('');
+  renderProgress();
+}
+function renderSection(sec,si){
+  const isFirst = si===0, isLast = si===SECTIONS.length-1;
+  return `
+    <section class="form-section ${si===0?'active':''}" id="sec-${si}">
+      <div class="section-card">
+        <header class="section-hd">
+          <p class="section-eyebrow">Seção ${sec.num} de ${pad(SECTIONS.length)}</p>
+          <h2 class="section-title">${sec.title}</h2>
+          <p class="section-desc">${sec.desc}</p>
+        </header>
+        <div class="questions">
+          ${sec.questions.map(q=>renderQuestion(q)).join('')}
+        </div>
+        <footer class="section-ft">
+          <button class="btn-prev ${isFirst?'invisible':''}" onclick="goSec(-1)">← Anterior</button>
+          <button class="btn-next" onclick="goSec(1)">
+            <span>${isLast?'Enviar briefing':'Próxima seção'}</span>
+            <span class="btn-arrow" aria-hidden="true">${isLast?'✓':'→'}</span>
+          </button>
+        </footer>
+      </div>
+    </section>`;
+}
+function renderQuestion(q){
+  const hint = q.hint?`<p class="q-hint">${q.hint}</p>`:'';
+  const req  = q.required?`<span class="q-req">obrigatório</span>`:'';
+  let input='';
+  if(q.type==='text'||q.type==='email'){
+    input=`<input class="field" id="fi-${q.id}" type="${q.type}" placeholder="${esc(q.ph||'')}" value="${esc(ans[q.id]||'')}" oninput="saveF('${q.id}',this.value)" autocomplete="off" spellcheck="false">`;
+  } else if(q.type==='textarea'){
+    input=`<textarea class="field" id="fi-${q.id}" rows="4" placeholder="${esc(q.ph||'')}" oninput="saveF('${q.id}',this.value)" spellcheck="false">${esc(ans[q.id]||'')}</textarea>`;
+  } else if(q.type==='radio'){
+    const cls = q.cols===1?'col1':q.cols===3?'col3':'';
+    input = `<div class="opts-grid ${cls}" role="group">`+
+      q.opts.map(o=>`
+        <div class="opt-card ${ans[q.id]===o?'chosen':''}" data-qid="${q.id}" data-val="${esc(o)}" onclick="pickR(this)" role="radio" aria-checked="${ans[q.id]===o}" tabindex="0">
+          <div class="opt-radio"><div class="opt-radio-dot"></div></div>
+          <span class="opt-label">${esc(o)}</span>
+        </div>`).join('')+`</div>`;
+  } else if(q.type==='chips'){
+    const sel = ans[q.id]||[];
+    input = `<div class="chips-wrap" role="group">`+
+      q.opts.map(o=>`
+        <div class="chip ${sel.includes(o)?'chosen':''}" data-qid="${q.id}" data-val="${esc(o)}" onclick="pickCh(this)" role="checkbox" aria-checked="${sel.includes(o)}" tabindex="0">${esc(o)}</div>`).join('')+`</div>`;
+  }
+  return `
+    <div class="question">
+      <div class="q-label-row">
+        <label class="q-label" for="fi-${q.id}">${q.label}</label>
+        ${req}
+      </div>
+      ${hint}
+      ${input}
+      <p class="err-msg" id="err-${q.id}" role="alert"></p>
+    </div>`;
+}
+function renderProgress(){
+  const el = document.getElementById('progress-pills');
+  el.innerHTML = SECTIONS.map((sec,i)=>{
+    const done=i<curSec, active=i===curSec;
+    return `${i>0?`<div class="prog-sep"></div>`:''}<div class="prog-pill ${done?'done':''} ${active?'active':''}">${sec.num}</div>`;
+  }).join('');
+}
+
+/* INTERACTIONS */
+function pickR(el){
+  const {qid,val}=el.dataset;
+  ans[qid]=val;
+  document.querySelectorAll(`.opt-card[data-qid="${qid}"]`).forEach(c=>{c.classList.remove('chosen');c.setAttribute('aria-checked','false')});
+  el.classList.add('chosen');el.setAttribute('aria-checked','true');
+  clearErr(qid);save();
+}
+function pickCh(el){
+  const {qid,val}=el.dataset;
+  if(!ans[qid])ans[qid]=[];
+  const i=ans[qid].indexOf(val);
+  if(i===-1){ans[qid].push(val);el.classList.add('chosen');el.setAttribute('aria-checked','true')}
+  else{ans[qid].splice(i,1);el.classList.remove('chosen');el.setAttribute('aria-checked','false')}
+  save();
+}
+function saveF(id,val){ans[id]=val;save()}
+document.addEventListener('keydown',e=>{
+  if(e.key===' '||e.key==='Enter'){
+    const t=e.target;
+    if(t.classList.contains('opt-card')){e.preventDefault();t.click()}
+    if(t.classList.contains('chip')){e.preventDefault();t.click()}
+  }
+});
+
+/* VALIDATION */
+function validateSec(idx){
+  const sec=SECTIONS[idx]; let ok=true;
+  sec.questions.forEach(q=>{
+    if(!q.required)return;
+    const fi=document.getElementById(`fi-${q.id}`);
+    let val=fi?fi.value.trim():(ans[q.id]||'');
+    if(fi)ans[q.id]=val;
+    let msg='';
+    if(!val)msg='Este campo é obrigatório';
+    else if(q.type==='email'&&!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(val))msg='Insira um e-mail válido';
+    showErr(q.id,msg);
+    if(fi)fi.classList.toggle('has-error',!!msg);
+    if(msg)ok=false;
+  });
+  return ok;
+}
+function showErr(id,msg){
+  const el=document.getElementById(`err-${id}`);
+  if(!el)return;
+  el.textContent=msg;el.classList.toggle('show',!!msg);
+}
+function clearErr(id){showErr(id,'')}
+
+/* NAVIGATION */
+function goSec(dir){
+  if(dir===1&&!validateSec(curSec)){
+    const firstErr=document.querySelector(`#sec-${curSec} .err-msg.show`);
+    if(firstErr)firstErr.closest('.question').scrollIntoView({behavior:'smooth',block:'center'});
+    return;
+  }
+  if(dir===1&&curSec===SECTIONS.length-1){submitForm();return}
+  const next=curSec+dir;
+  if(next<0||next>=SECTIONS.length)return;
+  const cur=document.getElementById(`sec-${curSec}`);
+  const nx=document.getElementById(`sec-${next}`);
+  cur.classList.add(dir===1?'slide-out-left':'slide-out-right');
+  setTimeout(()=>{
+    cur.classList.remove('active','slide-out-left','slide-out-right');
+    nx.classList.add('active',dir===1?'slide-in-right':'slide-in-left');
+    setTimeout(()=>nx.classList.remove('slide-in-right','slide-in-left'),400);
+    window.scrollTo({top:0,behavior:'smooth'});
+  },280);
+  curSec=next;renderProgress();save();
+}
+
+/* SUBMIT */
+function submitForm(){
+  SECTIONS.forEach(sec=>sec.questions.forEach(q=>{
+    const fi=document.getElementById(`fi-${q.id}`);
+    if(fi)ans[q.id]=fi.value.trim();
+  }));
+  save();
+  const lines=[];
+  SECTIONS.forEach(sec=>{
+    lines.push(`\n${'═'.repeat(40)}\n${sec.num}. ${sec.title.toUpperCase()}\n${'─'.repeat(40)}`);
+    sec.questions.forEach(q=>{
+      const v=ans[q.id];
+      const display=!v||(Array.isArray(v)&&!v.length)?'—':Array.isArray(v)?v.join(', '):v;
+      lines.push(`${q.label}\n→ ${display}`);
+    });
+  });
+  lines.push(`\n${'═'.repeat(40)}\nEnviado em: ${new Date().toLocaleString('pt-BR')}`);
+  const cliente='[COPY] '+(ans['nome_projeto']||ans['email']||'Cliente');
+  const email=ans['email']||'';
+  document.getElementById('ty').classList.add('show');
+  document.body.style.overflow='hidden';
+  if(typeof fbq==='function'){try{fbq('track','Lead')}catch(e){}}
+  emailjs.send('service_chqyxki','template_dzs0g1r',{
+    cliente:cliente, email:email, respostas:lines.join('\n')
+  }).catch(err=>console.error('EmailJS error:',err));
+}
+
+/* STORAGE */
+function save(){try{localStorage.setItem('infoproduct_briefing_copy',JSON.stringify({ans,curSec}))}catch(e){}}
+function load(){
+  try{
+    const d=JSON.parse(localStorage.getItem('infoproduct_briefing_copy')||'{}');
+    if(d.ans)Object.assign(ans,d.ans);
+    if(typeof d.curSec==='number')curSec=d.curSec;
+  }catch(e){}
+}
+
+/* DOWNLOAD */
+function downloadSummary(){
+  const lines=[
+    'BRIEFING — COPY',
+    'Infoproduct Design',
+    'infoproductsdesigns.com',
+    '═'.repeat(52),''
+  ];
+  SECTIONS.forEach(sec=>{
+    lines.push(`${sec.num}. ${sec.title.toUpperCase()}`);
+    lines.push('─'.repeat(36));
+    sec.questions.forEach(q=>{
+      const v=ans[q.id];
+      const display=!v||(Array.isArray(v)&&!v.length)?'—':Array.isArray(v)?v.join(', '):v;
+      lines.push(`${q.label}`);
+      lines.push(`  → ${display}`);
+    });
+    lines.push('');
+  });
+  lines.push('═'.repeat(52));
+  lines.push(`Enviado em: ${new Date().toLocaleString('pt-BR')}`);
+  const blob=new Blob([lines.join('\n')],{type:'text/plain;charset=utf-8'});
+  const a=document.createElement('a');
+  a.href=URL.createObjectURL(blob);
+  a.download=`briefing-copy-${Date.now()}.txt`;
+  a.click();
+}
+
+/* COVER */
+function startBriefing(){
+  const cover=document.getElementById('cover');
+  cover.classList.add('hiding');
+  setTimeout(()=>{cover.style.display='none'},450);
+}
+
+/* INIT */
+load();
+renderAll();
+if(curSec>0){
+  document.getElementById('sec-0').classList.remove('active');
+  document.getElementById(`sec-${curSec}`).classList.add('active');
+  document.getElementById('cover').style.display='none';
+}
+</script>
+</body>
+</html>
