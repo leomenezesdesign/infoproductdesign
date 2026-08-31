@@ -295,6 +295,35 @@ mark.hl {
 }
 .hero-sub strong { color: var(--text); font-weight: 600; }
 
+.hero-offer {
+  margin-top: 20px;
+  padding: 16px 20px;
+  background: var(--accent-soft);
+  border: 1px solid rgba(130,255,31,.22);
+  border-radius: 14px;
+  font-size: 15.5px;
+  color: var(--text);
+  line-height: 1.5;
+  max-width: 560px;
+}
+.hero-offer strong { color: var(--accent); font-weight: 600; }
+
+.cta-sub {
+  margin-top: 12px;
+  font-size: 13px;
+  color: var(--muted-dark);
+  line-height: 1.4;
+}
+
+.lead-offer {
+  display: inline-block;
+  margin-top: 8px;
+  font-size: 15px;
+  color: var(--text);
+  line-height: 1.55;
+}
+.lead-offer strong { color: var(--accent); font-weight: 600; }
+
 .lead-form {
   margin-top: 28px;
   display: flex; flex-direction: column; gap: 12px;
