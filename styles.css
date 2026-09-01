@@ -17,7 +17,7 @@
   --ease: cubic-bezier(.16,.84,.32,1);
 }
 
-html { scroll-behavior: smooth; }
+html { scroll-behavior: smooth; overflow-x: clip; }
 
 body {
   font-family: 'Manrope', system-ui, sans-serif;
@@ -1205,13 +1205,30 @@ mark.hl {
   .section { padding: 70px 0; }
   .nav { display: none; }
   .hero-gradient { display: none; }
-  .hero { padding: 92px 0 60px; }
-  .eyebrow { margin-top: 18px; }
+  .hero { padding: 92px 0 60px; overflow-x: clip; }
+  .hero-copy { text-align: center; }
+  .eyebrow { margin-top: 18px; justify-content: center; }
+  .hero-title {
+    font-size: clamp(40px, 8.5vw, 56px);
+    text-align: center;
+    line-height: 1.05;
+  }
+  .hero-title .line > span,
+  .hero-title .line > strong { white-space: normal; }
+  .hero-sub { text-align: center; margin-left: auto; margin-right: auto; }
+  .hero-offer {
+    text-align: center;
+    font-size: 14px;
+    padding: 14px 18px;
+    margin-left: auto; margin-right: auto;
+    max-width: 100%;
+  }
+  .cta-sub { text-align: center; }
+  .lead-form { align-items: stretch; }
+  .lead-form .btn { align-self: center; }
   .v-marquee { height: 440px; }
   .v-card { margin-bottom: 14px; }
   .v-marquee { gap: 14px; }
-  .hero-title .line > span,
-  .hero-title .line > strong { white-space: normal; }
   .contact-topline { flex-direction: column; gap: 16px; align-items: flex-start; }
 }
 @media (max-width: 560px) {
