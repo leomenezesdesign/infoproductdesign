@@ -277,9 +277,9 @@ mark.hl {
 }
 .hero-title strong { font-weight: 600; }
 .hero-title em { font-style: normal; font-weight: 600; color: var(--accent); }
-/* keep each line on a single row on desktop — exactly 5 lines */
+/* hero H1 wraps naturally as one continuous line */
 .hero-title .line > span,
-.hero-title .line > strong { white-space: nowrap; }
+.hero-title .line > strong { white-space: normal; }
 
 .line { display: block; }
 .line > span, .line > strong { display: block; }
