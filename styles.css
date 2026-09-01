@@ -297,14 +297,14 @@ mark.hl {
 
 .hero-offer {
   margin-top: 14px;
-  padding: 14px 18px;
+  padding: 14px 20px;
   background: var(--accent-soft);
   border: 1px solid rgba(130,255,31,.22);
   border-radius: 14px;
   font-size: 15px;
   color: var(--text);
   line-height: 1.45;
-  max-width: 560px;
+  max-width: 720px;
 }
 .hero-offer strong { color: var(--accent); font-weight: 600; }
 
