@@ -296,7 +296,7 @@ mark.hl {
 .hero-sub strong { color: var(--text); font-weight: 600; }
 
 .hero-offer {
-  margin-top: 14px;
+  margin-top: 24px;
   padding: 14px 20px;
   background: var(--accent-soft);
   border: 1px solid rgba(130,255,31,.22);
@@ -1221,7 +1221,7 @@ mark.hl {
     font-size: 12.5px;
     line-height: 1.4;
     padding: 10px 14px;
-    margin: 10px auto 0;
+    margin: 18px auto 0;
     max-width: 100%;
   }
   .cta-sub { text-align: center; }
