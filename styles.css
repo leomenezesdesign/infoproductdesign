@@ -286,11 +286,11 @@ mark.hl {
 
 .hero-sub {
   margin-top: 24px;
-  font-size: 17px;
+  font-size: 15px;
   font-weight: 400;
   color: var(--muted);
   max-width: 560px;
-  line-height: 1.45;
+  line-height: 1.5;
   letter-spacing: normal;
 }
 .hero-sub strong { color: var(--text); font-weight: 600; }
